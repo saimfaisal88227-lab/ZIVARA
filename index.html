@@ -36,14 +36,28 @@
     .section-title h2 { position: relative; display: inline-block; padding-bottom: 12px; }
     .section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 2px; background: var(--gold); }
     .section-title p { font-size: 1.1rem; color: #666; max-width: 600px; margin: 16px auto 0; }
-    #preloader { position: fixed; inset: 0; background: var(--black); z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 1s ease, visibility 1s ease; }
-    #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+    /* ============================================================
+       PRELOADER — FIXED WITH TRANSITION + HIDDEN STATE
+       ============================================================ */
+    #preloader {
+      position: fixed; inset: 0; background: var(--black); z-index: 99999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+      opacity: 1; visibility: visible;
+    }
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
     .preloader-ring { width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(198, 161, 91, 0.15); border-top: 2px solid var(--gold); border-right: 2px solid var(--gold-light); animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite; position: relative; box-shadow: 0 0 60px rgba(198, 161, 91, 0.2); }
     .preloader-ring::before { content: '◆'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.5rem; color: var(--gold); animation: pulse 1.5s ease-in-out infinite; }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     @keyframes pulse { 0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.9); } 50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); } }
     .preloader-logo { margin-top: 32px; font-family: var(--font-serif); font-size: 3.5rem; color: var(--white); letter-spacing: 0.2em; font-weight: 400; text-shadow: 0 0 40px rgba(198, 161, 91, 0.4); }
     .preloader-tagline { font-family: var(--font-sans); font-size: 0.9rem; letter-spacing: 0.5em; color: var(--gold); margin-top: 8px; text-transform: uppercase; font-weight: 300; }
+
     .announcement-bar { background: var(--black); color: var(--champagne); font-size: 0.75rem; letter-spacing: 0.08em; text-align: center; padding: 10px 16px; font-weight: 400; text-transform: uppercase; border-bottom: 1px solid rgba(198, 161, 91, 0.2); }
     .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(198, 161, 91, 0.15); transition: var(--transition); }
     .navbar .container { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; position: relative; }
@@ -250,6 +264,29 @@
     .best-seller-tabs button { padding: 14px 28px; background: transparent; border: none; border-bottom: 2px solid transparent; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #999; cursor: pointer; transition: var(--transition); }
     .best-seller-tabs button.active { color: var(--gold); border-bottom-color: var(--gold); }
     .best-seller-tabs button:hover { color: var(--gold); }
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px; }
+    .contact-card { background: var(--white); padding: 40px 24px; border-radius: var(--border-radius); text-align: center; box-shadow: var(--shadow-sm); border: 1px solid rgba(198, 161, 91, 0.15); transition: var(--transition); }
+    .contact-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--gold); }
+    .contact-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+    .contact-card h3 { font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 12px; }
+    .contact-card .contact-value { font-size: 1rem; color: var(--charcoal); font-weight: 500; margin-bottom: 20px; word-break: break-word; }
+    .contact-card .btn { padding: 12px 28px; font-size: 0.7rem; }
+    .contact-form { max-width: 700px; margin: 0 auto; background: var(--white); padding: 40px; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); border: 1px solid rgba(198, 161, 91, 0.15); }
+    .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    .contact-form .form-group { margin-bottom: 20px; }
+    .contact-form label { display: block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--charcoal); margin-bottom: 8px; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 14px 16px; border: 1px solid #ddd; border-radius: 4px; font-family: var(--font-sans); font-size: 0.9rem; outline: none; transition: var(--transition); background: var(--ivory); }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold); background: var(--white); }
+    .contact-form textarea { min-height: 140px; resize: vertical; }
+    .contact-form .btn { width: 100%; }
+    .form-success { display: none; background: #e8f5e9; border: 1px solid #2c7a4a; color: #1b5e20; padding: 16px; border-radius: 4px; margin-bottom: 20px; font-size: 0.9rem; text-align: center; }
+    .form-success.show { display: block; }
+    .contact-info-block { text-align: center; margin-bottom: 40px; }
+    .contact-info-block p { color: #666; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+    .footer-contact-info { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; font-size: 0.8rem; }
+    .footer-contact-info a { color: #aaa; transition: var(--transition); display: inline-flex; align-items: center; gap: 8px; }
+    .footer-contact-info a:hover { color: var(--gold); }
+    .footer-contact-info i { color: var(--gold); width: 16px; }
     .footer { background: var(--charcoal); color: #ccc; padding: 60px 0 20px; font-size: 0.85rem; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
     .footer h4 { font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
@@ -258,7 +295,7 @@
     .footer ul li a:hover { color: var(--gold); }
     .footer .logo { color: var(--white); font-size: 2.2rem; margin-bottom: 12px; }
     .footer .tagline { color: var(--champagne); font-size: 0.8rem; margin-bottom: 20px; font-style: italic; }
-    .social-icons { display: flex; gap: 16px; }
+    .social-icons { display: flex; gap: 16px; margin-top: 12px; }
     .social-icons a { color: #aaa; font-size: 1.2rem; transition: var(--transition); }
     .social-icons a:hover { color: var(--gold); }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; text-align: center; font-size: 0.75rem; color: #777; }
@@ -271,6 +308,7 @@
       .filter-sidebar { position: static; }
       .product-detail-layout { grid-template-columns: 1fr; gap: 40px; }
       .quick-view-layout { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 768px) {
       .landing-grid { grid-template-columns: 1fr; }
@@ -287,6 +325,9 @@
       .add-to-cart-btn { font-size: 0.65rem; padding: 10px; }
       .occasion-grid { grid-template-columns: repeat(2, 1fr); }
       .collection-hero { height: 260px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px; }
+      .contact-form .form-row { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .product-grid { grid-template-columns: 1fr; }
@@ -364,9 +405,9 @@
                   <li><a onclick="navigateTo({type:'collection', gender:'women', category:'chokers'})">Chokers</a></li>
                   <li><a onclick="navigateTo({type:'collection', gender:'women', category:'earrings'})">Earrings</a></li>
                   <li><a onclick="navigateTo({type:'collection', gender:'women', category:'jhumkas'})">Jhumkas</a></li>
+                  <li><a onclick="navigateTo({type:'collection', gender:'women', category:'studs'})">Studs</a></li>
                   <li><a onclick="navigateTo({type:'collection', gender:'women', category:'rings'})">Rings</a></li>
                   <li><a onclick="navigateTo({type:'collection', gender:'women', category:'bangles'})">Bangles</a></li>
-                  <li><a onclick="navigateTo({type:'collection', gender:'women', category:'bracelets'})">Bracelets</a></li>
                 </ul>
               </div>
               <div>
@@ -401,8 +442,7 @@
         <li><a onclick="navigateTo({type:'collection', gender:'all', category:'all'})">Jewelry</a></li>
         <li><a onclick="navigateTo({type:'collections'})">Collections</a></li>
         <li><a onclick="navigateTo({type:'sale'})">Sale</a></li>
-        <li><a onclick="navigateTo({type:'home'})">About</a></li>
-        <li><a onclick="navigateTo({type:'home'})">Contact</a></li>
+        <li><a onclick="navigateTo({type:'contact'})">Contact</a></li>
       </ul>
       <div class="nav-actions">
         <button onclick="openSearch()" aria-label="Search"><i class="fas fa-search"></i></button>
@@ -432,6 +472,7 @@
       <li><a onclick="navigateTo({type:'collection', gender:'all', category:'all'}); closeMobileDrawer();">Jewelry</a></li>
       <li><a onclick="navigateTo({type:'collections'}); closeMobileDrawer();">Collections</a></li>
       <li><a onclick="navigateTo({type:'sale'}); closeMobileDrawer();">Sale</a></li>
+      <li><a onclick="navigateTo({type:'contact'}); closeMobileDrawer();">Contact</a></li>
     </ul>
   </div>
 
@@ -480,11 +521,16 @@
         <div>
           <div class="logo">ZIVARA</div>
           <div class="tagline">"Elegance That Speaks."</div>
+          <div class="footer-contact-info">
+            <a href="mailto:saimfaisal88227@gmail.com"><i class="fas fa-envelope"></i> saimfaisal88227@gmail.com</a>
+            <a href="tel:+923004030301"><i class="fas fa-phone"></i> 03004030301</a>
+            <a href="https://wa.me/923004030301" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          </div>
           <div class="social-icons">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
           </div>
         </div>
         <div>
@@ -521,378 +567,419 @@
         <div>
           <h4>Customer Care</h4>
           <ul>
-            <li><a onclick="navigateTo({type:'home'})">Contact</a></li>
-            <li><a onclick="navigateTo({type:'home'})">Shipping</a></li>
-            <li><a onclick="navigateTo({type:'home'})">Returns</a></li>
-            <li><a onclick="navigateTo({type:'home'})">FAQs</a></li>
+            <li><a onclick="navigateTo({type:'contact'})">Contact</a></li>
+            <li><a onclick="navigateTo({type:'contact'})">Shipping</a></li>
+            <li><a onclick="navigateTo({type:'contact'})">Returns</a></li>
+            <li><a onclick="navigateTo({type:'contact'})">FAQs</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 ZIVARA. All Rights Reserved.</div>
+      <div class="footer-bottom">
+        © 2026 ZIVARA. All Rights Reserved. | Contact: Saim Faisal | 
+        <a href="mailto:saimfaisal88227@gmail.com" style="color:var(--gold);">saimfaisal88227@gmail.com</a> | 
+        <a href="tel:+923004030301" style="color:var(--gold);">03004030301</a>
+      </div>
     </div>
   </footer>
 
   <script>
     // ============================================================
-    // PRODUCT DATABASE — FULLY POPULATED
+    // GUARANTEED PRELOADER COMPLETION
     // ============================================================
-    // EDIT PRODUCT HERE
-    // CHANGE PRODUCT IMAGE HERE: image, gallery
-    // CHANGE PRODUCT PRICE HERE: price, salePrice, discount
-    // CHANGE PRODUCT CATEGORY HERE: category, subcategory
-    // CHANGE PRODUCT GENDER HERE: gender
-    // CHANGE BEST SELLER STATUS HERE: isBestSeller
-    //
-    // IMAGE SOURCE: Using Unsplash jewelry images with unique photo IDs.
-    // Each product has a UNIQUE image URL. Images auto-fallback if they fail.
+    // The preloader MUST hide, no matter what happens in the rest of
+    // the script. This runs FIRST, before any complex code, so even if
+    // an error occurs later, the preloader will still hide.
     // ============================================================
+    (function guaranteedPreloaderHide() {
+      const preloader = document.getElementById('preloader');
+      if (!preloader) return;
 
-    // Helper to generate unique Unsplash image URLs
-    // Each product gets a genuinely different image via unique photo IDs
-    const IMG = {
-      // Women's rings
-      ring1: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      ring2: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
-      ring3: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
-      ring4: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      ring5: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      ring6: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      ring7: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      ring8: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      ring9: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      ring10: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      // Men's rings
-      mring1: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      mring2: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
-      mring3: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      mring4: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
-      mring5: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      // Necklaces
-      neck1: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      neck2: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      neck3: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      neck4: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      neck5: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      neck6: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      neck7: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      neck8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      neck9: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      neck10: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      // Chokers
-      chk1: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      chk2: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      chk3: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      chk4: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      chk5: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      chk6: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      chk7: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      chk8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      chk9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      chk10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Earrings
-      ear1: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      ear2: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      ear3: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      ear4: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      ear5: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      ear6: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      ear7: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      ear8: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      ear9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      ear10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Jhumkas
-      jhu1: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      jhu2: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      jhu3: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      jhu4: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      jhu5: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      jhu6: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      jhu7: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      jhu8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      jhu9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      jhu10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Studs
-      std1: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      std2: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      std3: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      std4: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      std5: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      std6: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      std7: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      std8: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      std9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      std10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Hoops
-      hop1: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      hop2: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      hop3: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      hop4: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      hop5: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      hop6: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      hop7: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      hop8: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      hop9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      hop10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Bangles
-      ban1: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      ban2: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      ban3: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      ban4: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      ban5: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      ban6: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      ban7: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      ban8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      ban9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      ban10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Bracelets
-      bra1: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      bra2: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      bra3: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      bra4: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      bra5: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      bra6: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      bra7: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      bra8: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      bra9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      bra10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Kada
-      kad1: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      kad2: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      kad3: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      kad4: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      kad5: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      kad6: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      kad7: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      kad8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      kad9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      kad10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Pendants
-      pen1: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      pen2: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      pen3: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      pen4: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      pen5: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      pen6: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      pen7: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      pen8: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      pen9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      pen10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Tikka
-      tik1: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      tik2: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      tik3: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      tik4: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      tik5: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      tik6: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      tik7: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      tik8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      tik9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      tik10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Maang Tikka
-      mtik1: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      mtik2: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      mtik3: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      mtik4: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      mtik5: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      mtik6: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      mtik7: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      mtik8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      mtik9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      mtik10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Matha Patti
-      mat1: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      mat2: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      mat3: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      mat4: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      mat5: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      mat6: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      mat7: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      mat8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      mat9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      mat10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Nath
-      nat1: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      nat2: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      nat3: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      nat4: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      nat5: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      nat6: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      nat7: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      nat8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      nat9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      nat10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Jewelry sets
-      set1: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
-      set2: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      set3: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      set4: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      set5: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      set6: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      set7: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
-      set8: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      set9: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      set10: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      // Men's chains
-      mch1: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      mch2: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      mch3: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      mch4: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
-      mch5: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
-      mch6: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      mch7: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      mch8: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      mch9: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      mch10: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      // Men's bracelets
-      mbra1: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      mbra2: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
-      mbra3: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      mbra4: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      mbra5: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
-      mbra6: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      mbra7: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      mbra8: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      mbra9: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      mbra10: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      // Men's pendants
-      mpen1: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      mpen2: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
-      mpen3: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      mpen4: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      mpen5: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
-      mpen6: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      mpen7: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      mpen8: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      mpen9: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      mpen10: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      // Men's cufflinks
-      mcuf1: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      mcuf2: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
-      mcuf3: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      mcuf4: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      mcuf5: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
-      mcuf6: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      mcuf7: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      mcuf8: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      mcuf9: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      mcuf10: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
-      // Brooches
-      bro1: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
-      bro2: "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
-      bro3: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
-      bro4: "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
-      bro5: "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
-      bro6: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
-      bro7: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
-      bro8: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
-      bro9: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
-      bro10: "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80"
+      let hidden = false;
+      function hidePreloader(reason) {
+        if (hidden) return;
+        hidden = true;
+        preloader.classList.add('hidden');
+        document.body.style.overflow = '';
+        console.log('[ZIVARA] Preloader hidden:', reason || 'completed');
+      }
+
+      // Primary path: hide after a fixed short animation duration.
+      // This does NOT depend on window.load, images, or external resources.
+      setTimeout(() => hidePreloader('animation duration reached'), 1800);
+
+      // Hard safety fallback: hide after 4.5 seconds no matter what.
+      setTimeout(() => hidePreloader('safety timeout'), 4500);
+
+      // Expose for other scripts if needed
+      window.__hidePreloader = hidePreloader;
+    })();
+
+    // Lock scroll during preloader
+    document.body.style.overflow = 'hidden';
+
+    // Wrap ALL other initialization in try/catch so a single error
+    // never prevents the preloader from hiding.
+    try {
+
+    // ============================================================
+    // CATEGORY-SPECIFIC IMAGE POOLS
+    // ============================================================
+    const IMG_CATEGORY = {
+      'jewelry-sets': [
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'necklaces': [
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80"
+      ],
+      'chokers': [
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'earrings': [
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'jhumkas': [
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'studs': [
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'hoops': [
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'rings': [
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80"
+      ],
+      'bangles': [
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'bracelets': [
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'kada': [
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'pendants': [
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'tikka': [
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'maang-tikka': [
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'matha-patti': [
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'nath': [
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"
+      ],
+      'men-rings': [
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80"
+      ],
+      'men-chains': [
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+        "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80"
+      ],
+      'men-necklaces': [
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+        "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80"
+      ],
+      'men-bracelets': [
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80"
+      ],
+      'men-pendants': [
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80"
+      ],
+      'cufflinks': [
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80"
+      ],
+      'brooches': [
+        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&q=80",
+        "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&q=80",
+        "https://images.unsplash.com/photo-1622398925373-3f91b1e275f5?w=600&q=80",
+        "https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=600&q=80",
+        "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        "https://images.unsplash.com/photo-1607703703520-bb638e84caf2?w=600&q=80"
+      ]
     };
 
-    // Unique fallback image for broken images
-    const FALLBACK_IMG = "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80";
+    function getCategoryFallback(gender, category) {
+      const key = gender === 'men' ? 'men-' + category : category;
+      const pool = IMG_CATEGORY[key] || IMG_CATEGORY[category] || IMG_CATEGORY['necklaces'];
+      return pool && pool[0] ? pool[0] : 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80';
+    }
 
     // ============================================================
-    // GENERATE PRODUCT DATABASE (200+ unique products)
+    // PRODUCT GENERATION
     // ============================================================
-    // This generates products systematically with unique names,
-    // prices, images, and categories to ensure every category
-    // is fully populated.
-    // ============================================================
-
     const WOMEN_PRODUCT_DEFS = {
-      'jewelry-sets': { names: ['Royal Kundan Bridal Set','Pearl Majesty Set','Emerald Nauratan Set','Maroon Zircon Set','Golden Palace Set','Crystal Royale Set','Noor-e-Mahal Set','Traditional Gold Set','Mehndi Glow Set','Rose Gold Pearl Set'], priceRange: [2999, 14999], imgs: ['set1','set2','set3','set4','set5','set6','set7','set8','set9','set10'], occasions: [['bridal','baraat'],['walima','nikah'],['bridal','baraat'],['baraat','party'],['bridal','walima'],['party','walima'],['bridal','nikah'],['bridal','baraat'],['mehndi','party'],['walima','nikah']] },
-      'necklaces': { names: ['Royal Kundan Necklace','Pearl Elegance Necklace','Crystal Statement Necklace','Minimal Gold Chain','Emerald Drop Necklace','Maroon Beaded Necklace','Zircon Choker Necklace','Floral Kundan Necklace','Champagne Pearl Necklace','Oxidized Silver Necklace'], priceRange: [1499, 5999], imgs: ['neck1','neck2','neck3','neck4','neck5','neck6','neck7','neck8','neck9','neck10'], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['daily-wear','office'],['walima','party'],['party','get-together'],['bridal','baraat'],['mehndi','party'],['walima','nikah'],['daily-wear','get-together']] },
-      'chokers': { names: ['Royal Kundan Choker','Pearl Choker Necklace','Crystal Choker Set','Emerald Choker','Maroon Velvet Choker','Zircon Statement Choker','Floral Meenakari Choker','Gold Tone Choker','Champagne Choker','Oxidized Choker'], priceRange: [1499, 6999], imgs: ['chk1','chk2','chk3','chk4','chk5','chk6','chk7','chk8','chk9','chk10'], occasions: [['bridal','baraat'],['walima','party'],['party','formal'],['bridal','walima'],['baraat','party'],['bridal','baraat'],['mehndi','party'],['walima','nikah'],['walima','formal'],['daily-wear','get-together']] },
-      'earrings': { names: ['Crystal Drop Earrings','Pearl Stud Earrings','Gold Hoop Earrings','Kundan Statement Earrings','Emerald Drop Earrings','Maroon Stone Earrings','Zircon Halo Earrings','Floral Crystal Earrings','Minimal Gold Earrings','Silver CZ Earrings'], priceRange: [699, 2999], imgs: ['ear1','ear2','ear3','ear4','ear5','ear6','ear7','ear8','ear9','ear10'], occasions: [['party','formal'],['daily-wear','office'],['daily-wear','party'],['bridal','mehndi'],['walima','party'],['mehndi','party'],['bridal','baraat'],['mehndi','party'],['daily-wear','office'],['party','get-together']] },
-      'jhumkas': { names: ['Traditional Gold Jhumka','Colorful Meenakari Jhumka','Pearl Drop Jhumka','Kundan Jhumka','Emerald Jhumka','Maroon Jhumka','Crystal Jhumka','Floral Jhumka','Champagne Jhumka','Oxidized Jhumka'], priceRange: [799, 3499], imgs: ['jhu1','jhu2','jhu3','jhu4','jhu5','jhu6','jhu7','jhu8','jhu9','jhu10'], occasions: [['mehndi','eid'],['mehndi','party'],['walima','nikah'],['bridal','baraat'],['bridal','walima'],['mehndi','party'],['party','formal'],['mehndi','eid'],['walima','party'],['daily-wear','get-together']] },
-      'studs': { names: ['Pearl Stud Earrings','Crystal Stud Earrings','Gold Stud Earrings','Zircon Stud Earrings','Emerald Stud Earrings','Maroon Stone Studs','Floral Stud Earrings','Minimal Gold Studs','Silver CZ Studs','Champagne Studs'], priceRange: [499, 1999], imgs: ['std1','std2','std3','std4','std5','std6','std7','std8','std9','std10'], occasions: [['daily-wear','office'],['party','formal'],['daily-wear','office'],['walima','party'],['walima','nikah'],['party','get-together'],['daily-wear','office'],['daily-wear','get-together'],['party','formal'],['walima','office']] },
-      'hoops': { names: ['Gold Hoop Earrings','Silver Hoop Earrings','Crystal Hoop Earrings','Pearl Hoop Earrings','Zircon Hoop Earrings','Minimal Gold Hoops','Floral Hoop Earrings','Champagne Hoops','Oxidized Hoops','Twisted Hoop Earrings'], priceRange: [599, 2199], imgs: ['hop1','hop2','hop3','hop4','hop5','hop6','hop7','hop8','hop9','hop10'], occasions: [['daily-wear','office'],['daily-wear','get-together'],['party','formal'],['walima','office'],['party','get-together'],['daily-wear','office'],['daily-wear','party'],['walima','office'],['get-together','daily-wear'],['party','office']] },
-      'rings': { names: ['Royal Pearl Ring','Emerald Halo Ring','Crystal Leaf Ring','Rose Gold Infinity Ring','Kundan Adjustable Ring','Maroon Stone Ring','Champagne Zircon Ring','Floral Crystal Ring','Minimal Gold-Tone Ring','Silver CZ Statement Ring'], priceRange: [699, 2999], imgs: ['ring1','ring2','ring3','ring4','ring5','ring6','ring7','ring8','ring9','ring10'], occasions: [['party','formal'],['walima','nikah'],['daily-wear','party'],['daily-wear','office'],['bridal','mehndi'],['mehndi','party'],['walima','party'],['party','get-together'],['daily-wear','office'],['party','formal']] },
-      'bangles': { names: ['Gold Tone Bangle Set','Pearl Bangle Set','Crystal Bangle Set','Kundan Bangle Set','Emerald Bangle Set','Maroon Bangle Set','Floral Meenakari Bangles','Champagne Bangles','Oxidized Bangles','Zircon Bangle Set'], priceRange: [899, 4999], imgs: ['ban1','ban2','ban3','ban4','ban5','ban6','ban7','ban8','ban9','ban10'], occasions: [['bridal','mehndi'],['walima','nikah'],['party','formal'],['bridal','baraat'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['party','baraat']] },
-      'bracelets': { names: ['Crystal Tennis Bracelet','Gold Chain Bracelet','Pearl Bracelet','Kundan Bracelet','Emerald Bracelet','Maroon Bracelet','Zircon Bracelet','Floral Crystal Bracelet','Champagne Bracelet','Silver CZ Bracelet'], priceRange: [799, 3999], imgs: ['bra1','bra2','bra3','bra4','bra5','bra6','bra7','bra8','bra9','bra10'], occasions: [['party','formal'],['daily-wear','office'],['walima','nikah'],['bridal','baraat'],['bridal','walima'],['mehndi','party'],['party','formal'],['party','get-together'],['walima','office'],['daily-wear','get-together']] },
-      'kada': { names: ['Royal Gold Kada','Pearl Kada','Crystal Kada','Kundan Kada','Emerald Kada','Maroon Kada','Floral Meenakari Kada','Champagne Kada','Oxidized Kada','Zircon Kada'], priceRange: [999, 4999], imgs: ['kad1','kad2','kad3','kad4','kad5','kad6','kad7','kad8','kad9','kad10'], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] },
-      'pendants': { names: ['Crystal Heart Pendant','Pearl Drop Pendant','Gold Chain Pendant','Zircon Halo Pendant','Emerald Pendant','Maroon Stone Pendant','Floral Crystal Pendant','Champagne Pendant','Minimal Gold Pendant','Silver CZ Pendant'], priceRange: [699, 2999], imgs: ['pen1','pen2','pen3','pen4','pen5','pen6','pen7','pen8','pen9','pen10'], occasions: [['get-together','daily-wear'],['walima','nikah'],['daily-wear','office'],['party','formal'],['walima','party'],['mehndi','party'],['party','get-together'],['walima','office'],['daily-wear','office'],['party','get-together']] },
-      'tikka': { names: ['Bridal Gold Tikka','Pearl Tikka','Crystal Tikka','Kundan Tikka','Emerald Tikka','Maroon Tikka','Floral Meenakari Tikka','Champagne Tikka','Oxidized Tikka','Zircon Tikka'], priceRange: [799, 2999], imgs: ['tik1','tik2','tik3','tik4','tik5','tik6','tik7','tik8','tik9','tik10'], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] },
-      'maang-tikka': { names: ['Pearl Maang Tikka','Gold Maang Tikka','Crystal Maang Tikka','Kundan Maang Tikka','Emerald Maang Tikka','Maroon Maang Tikka','Floral Maang Tikka','Champagne Maang Tikka','Oxidized Maang Tikka','Zircon Maang Tikka'], priceRange: [999, 3499], imgs: ['mtik1','mtik2','mtik3','mtik4','mtik5','mtik6','mtik7','mtik8','mtik9','mtik10'], occasions: [['walima','nikah'],['bridal','baraat'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] },
-      'matha-patti': { names: ['Royal Matha Patti','Pearl Matha Patti','Crystal Matha Patti','Kundan Matha Patti','Emerald Matha Patti','Maroon Matha Patti','Floral Matha Patti','Champagne Matha Patti','Oxidized Matha Patti','Zircon Matha Patti'], priceRange: [1499, 4999], imgs: ['mat1','mat2','mat3','mat4','mat5','mat6','mat7','mat8','mat9','mat10'], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] },
-      'nath': { names: ['Bridal Gold Nath','Pearl Nath','Crystal Nath','Kundan Nath','Emerald Nath','Maroon Nath','Floral Nath','Champagne Nath','Oxidized Nath','Zircon Nath'], priceRange: [599, 2499], imgs: ['nat1','nat2','nat3','nat4','nat5','nat6','nat7','nat8','nat9','nat10'], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] }
+      'jewelry-sets': { names: ['Royal Kundan Bridal Set','Pearl Majesty Bridal Set','Emerald Nauratan Bridal Set','Maroon Zircon Bridal Set','Golden Palace Bridal Set','Noor-e-Mahal Pearl Set','Traditional Gold Kundan Set','Champagne Crystal Set','Mehndi Glow Set','Rose Gold Pearl Set'], priceRange: [3499, 14999], occasions: [['bridal','baraat'],['walima','nikah'],['bridal','baraat'],['baraat','party'],['bridal','walima'],['bridal','nikah'],['bridal','baraat'],['walima','party'],['mehndi','party'],['walima','nikah']] },
+      'necklaces': { names: ['Royal Kundan Necklace','Pearl Elegance Necklace','Crystal Statement Necklace','Minimal Gold Chain','Emerald Drop Necklace','Maroon Beaded Necklace','Zircon Choker Necklace','Floral Kundan Necklace','Champagne Pearl Necklace','Oxidized Silver Necklace'], priceRange: [1499, 6999], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['daily-wear','office'],['walima','party'],['party','get-together'],['bridal','baraat'],['mehndi','party'],['walima','nikah'],['daily-wear','get-together']] },
+      'chokers': { names: ['Royal Kundan Choker','Pearl Choker Necklace','Crystal Choker Set','Emerald Choker','Maroon Velvet Choker','Zircon Statement Choker','Floral Meenakari Choker','Gold Tone Choker','Champagne Choker','Oxidized Choker'], priceRange: [1499, 6999], occasions: [['bridal','baraat'],['walima','party'],['party','formal'],['bridal','walima'],['baraat','party'],['bridal','baraat'],['mehndi','party'],['walima','nikah'],['walima','formal'],['daily-wear','get-together']] },
+      'earrings': { names: ['Crystal Drop Earrings','Pearl Stud Earrings','Gold Hoop Earrings','Kundan Statement Earrings','Emerald Drop Earrings','Maroon Stone Earrings','Zircon Halo Earrings','Floral Crystal Earrings','Minimal Gold Earrings','Silver CZ Earrings'], priceRange: [699, 3499], occasions: [['party','formal'],['daily-wear','office'],['daily-wear','party'],['bridal','mehndi'],['walima','party'],['mehndi','party'],['bridal','baraat'],['mehndi','party'],['daily-wear','office'],['party','get-together']] },
+      'jhumkas': { names: ['Traditional Gold Jhumka','Colorful Meenakari Jhumka','Pearl Drop Jhumka','Kundan Jhumka','Emerald Jhumka','Maroon Jhumka','Crystal Jhumka','Floral Jhumka','Champagne Jhumka','Oxidized Jhumka'], priceRange: [799, 3499], occasions: [['mehndi','eid'],['mehndi','party'],['walima','nikah'],['bridal','baraat'],['bridal','walima'],['mehndi','party'],['party','formal'],['mehndi','eid'],['walima','party'],['daily-wear','get-together']] },
+      'studs': { names: ['Pearl Stud Earrings','Crystal Stud Earrings','Gold Stud Earrings','Zircon Stud Earrings','Emerald Stud Earrings','Maroon Stone Studs','Floral Stud Earrings','Minimal Gold Studs','Silver CZ Studs','Champagne Studs'], priceRange: [499, 1999], occasions: [['daily-wear','office'],['party','formal'],['daily-wear','office'],['walima','party'],['walima','nikah'],['party','get-together'],['daily-wear','office'],['daily-wear','get-together'],['party','formal'],['walima','office']] },
+      'hoops': { names: ['Gold Hoop Earrings','Silver Hoop Earrings','Crystal Hoop Earrings','Pearl Hoop Earrings','Zircon Hoop Earrings','Minimal Gold Hoops','Floral Hoop Earrings','Champagne Hoops','Oxidized Hoops','Twisted Hoop Earrings'], priceRange: [599, 2199], occasions: [['daily-wear','office'],['daily-wear','get-together'],['party','formal'],['walima','office'],['party','get-together'],['daily-wear','office'],['daily-wear','party'],['walima','office'],['get-together','daily-wear'],['party','office']] },
+      'rings': { names: ['Royal Pearl Ring','Emerald Halo Ring','Crystal Leaf Ring','Rose Gold Infinity Ring','Kundan Adjustable Ring','Maroon Stone Ring','Champagne Zircon Ring','Floral Crystal Ring','Minimal Gold-Tone Ring','Silver CZ Statement Ring'], priceRange: [699, 2999], occasions: [['party','formal'],['walima','nikah'],['daily-wear','party'],['daily-wear','office'],['bridal','mehndi'],['mehndi','party'],['walima','party'],['party','get-together'],['daily-wear','office'],['party','formal']] },
+      'bangles': { names: ['Gold Tone Bangle Set','Pearl Bangle Set','Crystal Bangle Set','Kundan Bangle Set','Emerald Bangle Set','Maroon Bangle Set','Floral Meenakari Bangles','Champagne Bangles','Oxidized Bangles','Zircon Bangle Set'], priceRange: [899, 4999], occasions: [['bridal','mehndi'],['walima','nikah'],['party','formal'],['bridal','baraat'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['party','baraat']] },
+      'bracelets': { names: ['Crystal Tennis Bracelet','Gold Chain Bracelet','Pearl Bracelet','Kundan Bracelet','Emerald Bracelet','Maroon Bracelet','Zircon Bracelet','Floral Crystal Bracelet','Champagne Bracelet','Silver CZ Bracelet'], priceRange: [799, 3999], occasions: [['party','formal'],['daily-wear','office'],['walima','nikah'],['bridal','baraat'],['bridal','walima'],['mehndi','party'],['party','formal'],['party','get-together'],['walima','office'],['daily-wear','get-together']] },
+      'kada': { names: ['Royal Gold Kada','Pearl Kada','Crystal Kada','Kundan Kada','Emerald Kada','Maroon Kada','Floral Meenakari Kada','Champagne Kada','Oxidized Kada','Zircon Kada'], priceRange: [999, 4999], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] },
+      'pendants': { names: ['Crystal Heart Pendant','Pearl Drop Pendant','Gold Chain Pendant','Zircon Halo Pendant','Emerald Pendant','Maroon Stone Pendant','Floral Crystal Pendant','Champagne Pendant','Minimal Gold Pendant','Silver CZ Pendant'], priceRange: [699, 2999], occasions: [['get-together','daily-wear'],['walima','nikah'],['daily-wear','office'],['party','formal'],['walima','party'],['mehndi','party'],['party','get-together'],['walima','office'],['daily-wear','office'],['party','get-together']] },
+      'tikka': { names: ['Bridal Gold Tikka','Pearl Tikka','Crystal Tikka','Kundan Tikka','Emerald Tikka','Maroon Tikka','Floral Meenakari Tikka','Champagne Tikka','Oxidized Tikka','Zircon Tikka'], priceRange: [799, 2999], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] },
+      'maang-tikka': { names: ['Pearl Maang Tikka','Gold Maang Tikka','Crystal Maang Tikka','Kundan Maang Tikka','Emerald Maang Tikka','Maroon Maang Tikka','Floral Maang Tikka','Champagne Maang Tikka','Oxidized Maang Tikka','Zircon Maang Tikka'], priceRange: [999, 3499], occasions: [['walima','nikah'],['bridal','baraat'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] },
+      'matha-patti': { names: ['Royal Matha Patti','Pearl Matha Patti','Crystal Matha Patti','Kundan Matha Patti','Emerald Matha Patti','Maroon Matha Patti','Floral Matha Patti','Champagne Matha Patti','Oxidized Matha Patti','Zircon Matha Patti'], priceRange: [1499, 4999], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] },
+      'nath': { names: ['Bridal Gold Nath','Pearl Nath','Crystal Nath','Kundan Nath','Emerald Nath','Maroon Nath','Floral Nath','Champagne Nath','Oxidized Nath','Zircon Nath'], priceRange: [599, 2499], occasions: [['bridal','baraat'],['walima','nikah'],['party','formal'],['bridal','mehndi'],['bridal','walima'],['mehndi','party'],['mehndi','eid'],['walima','party'],['daily-wear','get-together'],['bridal','party']] }
     };
 
     const MEN_PRODUCT_DEFS = {
-      'rings': { names: ['Classic Silver Ring','Midnight Onyx Ring','Royal Black Stone Ring','Minimal Steel Ring','Modern Titanium Ring','Gold Band Ring','Dual Tone Ring','Engraved Signet Ring','Carbon Fiber Ring','Vintage Bronze Ring'], priceRange: [999, 3999], imgs: ['mring1','mring2','mring3','mring4','mring5','mring1','mring2','mring3','mring4','mring5'], occasions: [['formal','office'],['party','formal'],['wedding-guest','baraat'],['daily-wear','office'],['party','formal'],['wedding-guest','nikah'],['formal','office'],['baraat','walima'],['daily-wear','get-together'],['party','formal']] },
-      'chains': { names: ['Classic Silver Chain','Gold Plated Chain','Steel Link Chain','Rope Chain','Box Chain','Cuban Link Chain','Figaro Chain','Snake Chain','Byzantine Chain','Minimal Chain'], priceRange: [1499, 5999], imgs: ['mch1','mch2','mch3','mch4','mch5','mch6','mch7','mch8','mch9','mch10'], occasions: [['daily-wear','office'],['formal','party'],['daily-wear','get-together'],['party','formal'],['wedding-guest','baraat'],['daily-wear','casual'],['formal','office'],['party','casual'],['daily-wear','office'],['get-together','casual']] },
-      'necklaces': { names: ['Men Gold Chain Necklace','Steel Pendant Necklace','Silver Link Necklace','Black Beaded Necklace','Leather Cord Necklace','Cross Pendant Necklace','Minimal Chain Necklace','Cuban Link Necklace','Rope Chain Necklace','Modern Necklace'], priceRange: [1499, 5999], imgs: ['mch1','mch2','mch3','mch4','mch5','mch6','mch7','mch8','mch9','mch10'], occasions: [['formal','office'],['daily-wear','casual'],['party','formal'],['get-together','casual'],['daily-wear','office'],['wedding-guest','nikah'],['party','formal'],['baraat','walima'],['daily-wear','casual'],['office','get-together']] },
-      'bracelets': { names: ['Leather Bracelet','Steel Link Bracelet','Beaded Bracelet','Cuban Link Bracelet','Rope Bracelet','Minimal Cuff Bracelet','Black Onyx Bracelet','Silver Chain Bracelet','Gold Plated Bracelet','Modern Bracelet'], priceRange: [999, 3999], imgs: ['mbra1','mbra2','mbra3','mbra4','mbra5','mbra6','mbra7','mbra8','mbra9','mbra10'], occasions: [['daily-wear','casual'],['formal','office'],['get-together','casual'],['party','formal'],['daily-wear','office'],['wedding-guest','baraat'],['party','casual'],['formal','office'],['daily-wear','get-together'],['casual','office']] },
-      'pendants': { names: ['Cross Pendant','Steel Dog Tag','Silver Compass Pendant','Black Onyx Pendant','Minimal Circle Pendant','Arrow Pendant','Tree of Life Pendant','Wolf Pendant','Anchor Pendant','Modern Pendant'], priceRange: [899, 3499], imgs: ['mpen1','mpen2','mpen3','mpen4','mpen5','mpen6','mpen7','mpen8','mpen9','mpen10'], occasions: [['daily-wear','casual'],['formal','office'],['get-together','casual'],['party','formal'],['daily-wear','office'],['wedding-guest','nikah'],['party','casual'],['formal','office'],['daily-wear','get-together'],['casual','office']] },
-      'cufflinks': { names: ['Classic Silver Cufflinks','Gold Plated Cufflinks','Black Onyx Cufflinks','Steel Cufflinks','Modern Cufflinks','Vintage Cufflinks','Minimal Cufflinks','Engraved Cufflinks','Dual Tone Cufflinks','Wedding Cufflinks'], priceRange: [999, 3999], imgs: ['mcuf1','mcuf2','mcuf3','mcuf4','mcuf5','mcuf6','mcuf7','mcuf8','mcuf9','mcuf10'], occasions: [['formal','office'],['wedding-guest','baraat'],['party','formal'],['wedding-guest','nikah'],['formal','office'],['baraat','walima'],['party','formal'],['wedding-guest','baraat'],['formal','office'],['party','formal']] },
-      'brooches': { names: ['Classic Silver Brooch','Gold Plated Brooch','Black Stone Brooch','Steel Brooch','Modern Brooch','Vintage Brooch','Minimal Brooch','Engraved Brooch','Dual Tone Brooch','Wedding Brooch'], priceRange: [699, 2499], imgs: ['bro1','bro2','bro3','bro4','bro5','bro6','bro7','bro8','bro9','bro10'], occasions: [['formal','office'],['wedding-guest','baraat'],['party','formal'],['wedding-guest','nikah'],['formal','office'],['baraat','walima'],['party','formal'],['wedding-guest','baraat'],['formal','office'],['party','formal']] }
+      'rings': { names: ['Classic Silver Ring','Midnight Onyx Ring','Royal Black Stone Ring','Minimal Steel Ring','Modern Titanium Ring','Gold Band Ring','Dual Tone Ring','Engraved Signet Ring','Carbon Fiber Ring','Vintage Bronze Ring'], priceRange: [999, 3999], occasions: [['formal','office'],['party','formal'],['wedding-guest','baraat'],['daily-wear','office'],['party','formal'],['wedding-guest','nikah'],['formal','office'],['baraat','walima'],['daily-wear','get-together'],['party','formal']] },
+      'chains': { names: ['Classic Silver Chain','Gold Plated Chain','Steel Link Chain','Rope Chain','Box Chain','Cuban Link Chain','Figaro Chain','Snake Chain','Byzantine Chain','Minimal Chain'], priceRange: [1499, 5999], occasions: [['daily-wear','office'],['formal','party'],['daily-wear','get-together'],['party','formal'],['wedding-guest','baraat'],['daily-wear','casual'],['formal','office'],['party','casual'],['daily-wear','office'],['get-together','casual']] },
+      'necklaces': { names: ['Men Gold Chain Necklace','Steel Pendant Necklace','Silver Link Necklace','Black Beaded Necklace','Leather Cord Necklace','Cross Pendant Necklace','Minimal Chain Necklace','Cuban Link Necklace','Rope Chain Necklace','Modern Necklace'], priceRange: [1499, 5999], occasions: [['formal','office'],['daily-wear','casual'],['party','formal'],['get-together','casual'],['daily-wear','office'],['wedding-guest','nikah'],['party','formal'],['baraat','walima'],['daily-wear','casual'],['office','get-together']] },
+      'bracelets': { names: ['Leather Bracelet','Steel Link Bracelet','Beaded Bracelet','Cuban Link Bracelet','Rope Bracelet','Minimal Cuff Bracelet','Black Onyx Bracelet','Silver Chain Bracelet','Gold Plated Bracelet','Modern Bracelet'], priceRange: [999, 3999], occasions: [['daily-wear','casual'],['formal','office'],['get-together','casual'],['party','formal'],['daily-wear','office'],['wedding-guest','baraat'],['party','casual'],['formal','office'],['daily-wear','get-together'],['casual','office']] },
+      'pendants': { names: ['Cross Pendant','Steel Dog Tag','Silver Compass Pendant','Black Onyx Pendant','Minimal Circle Pendant','Arrow Pendant','Tree of Life Pendant','Wolf Pendant','Anchor Pendant','Modern Pendant'], priceRange: [899, 3499], occasions: [['daily-wear','casual'],['formal','office'],['get-together','casual'],['party','formal'],['daily-wear','office'],['wedding-guest','nikah'],['party','casual'],['formal','office'],['daily-wear','get-together'],['casual','office']] },
+      'cufflinks': { names: ['Classic Silver Cufflinks','Gold Plated Cufflinks','Black Onyx Cufflinks','Steel Cufflinks','Modern Cufflinks','Vintage Cufflinks','Minimal Cufflinks','Engraved Cufflinks','Dual Tone Cufflinks','Wedding Cufflinks'], priceRange: [999, 3999], occasions: [['formal','office'],['wedding-guest','baraat'],['party','formal'],['wedding-guest','nikah'],['formal','office'],['baraat','walima'],['party','formal'],['wedding-guest','baraat'],['formal','office'],['party','formal']] },
+      'brooches': { names: ['Classic Silver Brooch','Gold Plated Brooch','Black Stone Brooch','Steel Brooch','Modern Brooch','Vintage Brooch','Minimal Brooch','Engraved Brooch','Dual Tone Brooch','Wedding Brooch'], priceRange: [699, 2499], occasions: [['formal','office'],['wedding-guest','baraat'],['party','formal'],['wedding-guest','nikah'],['formal','office'],['baraat','walima'],['party','formal'],['wedding-guest','baraat'],['formal','office'],['party','formal']] }
     };
 
-    // Build product list
     const PRODUCTS = [];
     let pid = 1;
 
-    // Women's products
     for (const [cat, def] of Object.entries(WOMEN_PRODUCT_DEFS)) {
+      const imgPool = IMG_CATEGORY[cat] || IMG_CATEGORY['necklaces'];
       def.names.forEach((name, i) => {
         const basePrice = def.priceRange[0] + Math.round((def.priceRange[1] - def.priceRange[0]) * (i / 9));
-        const salePrice = Math.round(basePrice * (0.7 + (i % 3) * 0.05));
+        const salePrice = Math.round(basePrice * (0.72 + (i % 3) * 0.04));
         const discount = Math.round(((basePrice - salePrice) / basePrice) * 100);
         PRODUCTS.push({
-          id: pid++,
-          name: name,
-          description: `Elegant ${name.toLowerCase()} crafted with premium artificial materials. Perfect for ${def.occasions[i].join(' and ')} occasions.`,
-          gender: 'women',
-          category: cat,
-          subcategory: cat + '-collection',
-          occasion: def.occasions[i],
+          id: pid++, name, description: `Elegant ${name.toLowerCase()} crafted with premium artificial materials. Perfect for ${def.occasions[i].join(' and ')} occasions.`,
+          gender: 'women', category: cat, subcategory: cat, occasion: def.occasions[i],
           style: [['traditional','royal'],['minimal','modern'],['statement','royal'],['pearl','minimal'],['kundan','royal'],['crystal','statement'],['floral','modern'],['traditional','kundan'],['pearl','royal'],['oxidized','traditional']][i % 10],
-          material: 'artificial jewelry',
-          color: ['gold','silver','rose-gold','champagne','emerald','maroon','pearl','crystal','black','bronze'][i % 10],
-          price: basePrice,
-          salePrice: salePrice,
-          discount: discount,
-          image: IMG[def.imgs[i]],
-          gallery: [IMG[def.imgs[i]], IMG[def.imgs[(i+1)%10]], IMG[def.imgs[(i+2)%10]]],
-          rating: +(4.5 + (i % 5) * 0.1).toFixed(1),
-          reviews: 15 + i * 7 + (i % 3) * 10,
-          stock: 5 + (i % 15),
-          isBestSeller: i < 4,
-          isNew: i % 3 === 0,
-          isSale: salePrice < basePrice
+          material: 'artificial jewelry', color: ['gold','silver','rose-gold','champagne','emerald','maroon','pearl','crystal','black','bronze'][i % 10],
+          price: basePrice, salePrice, discount,
+          image: imgPool[i % imgPool.length],
+          gallery: [imgPool[i % imgPool.length], imgPool[(i+1) % imgPool.length], imgPool[(i+2) % imgPool.length]],
+          rating: +(4.5 + (i % 5) * 0.1).toFixed(1), reviews: 15 + i * 7 + (i % 3) * 10, stock: 5 + (i % 15),
+          isBestSeller: i < 4, isNew: i % 3 === 0, isSale: salePrice < basePrice
         });
       });
     }
 
-    // Men's products
     for (const [cat, def] of Object.entries(MEN_PRODUCT_DEFS)) {
+      const imgPool = IMG_CATEGORY['men-' + cat] || IMG_CATEGORY['men-chains'];
       def.names.forEach((name, i) => {
         const basePrice = def.priceRange[0] + Math.round((def.priceRange[1] - def.priceRange[0]) * (i / 9));
-        const salePrice = Math.round(basePrice * (0.72 + (i % 3) * 0.05));
+        const salePrice = Math.round(basePrice * (0.75 + (i % 3) * 0.04));
         const discount = Math.round(((basePrice - salePrice) / basePrice) * 100);
         PRODUCTS.push({
-          id: pid++,
-          name: name,
-          description: `Refined ${name.toLowerCase()} for the modern gentleman. Perfect for ${def.occasions[i].join(' and ')} occasions.`,
-          gender: 'men',
-          category: cat,
-          subcategory: cat + '-collection',
-          occasion: def.occasions[i],
+          id: pid++, name, description: `Refined ${name.toLowerCase()} for the modern gentleman. Perfect for ${def.occasions[i].join(' and ')} occasions.`,
+          gender: 'men', category: cat, subcategory: cat, occasion: def.occasions[i],
           style: [['classic','minimal'],['modern','royal'],['statement','classic'],['minimal','modern'],['royal','classic'],['modern','minimal'],['classic','royal'],['statement','modern'],['minimal','classic'],['royal','modern']][i % 10],
-          material: 'artificial jewelry',
-          color: ['silver','gold','black','steel','bronze','gunmetal','white-gold','rose-gold','titanium','chrome'][i % 10],
-          price: basePrice,
-          salePrice: salePrice,
-          discount: discount,
-          image: IMG[def.imgs[i]],
-          gallery: [IMG[def.imgs[i]], IMG[def.imgs[(i+1)%10]], IMG[def.imgs[(i+2)%10]]],
-          rating: +(4.4 + (i % 5) * 0.1).toFixed(1),
-          reviews: 12 + i * 6 + (i % 3) * 8,
-          stock: 6 + (i % 12),
-          isBestSeller: i < 4,
-          isNew: i % 4 === 0,
-          isSale: salePrice < basePrice
+          material: 'artificial jewelry', color: ['silver','gold','black','steel','bronze','gunmetal','white-gold','rose-gold','titanium','chrome'][i % 10],
+          price: basePrice, salePrice, discount,
+          image: imgPool[i % imgPool.length],
+          gallery: [imgPool[i % imgPool.length], imgPool[(i+1) % imgPool.length], imgPool[(i+2) % imgPool.length]],
+          rating: +(4.4 + (i % 5) * 0.1).toFixed(1), reviews: 12 + i * 6 + (i % 3) * 8, stock: 6 + (i % 12),
+          isBestSeller: i < 4, isNew: i % 4 === 0, isSale: salePrice < basePrice
         });
       });
     }
@@ -918,7 +1005,6 @@
       { key: 'matha-patti', name: 'Matha Patti', icon: 'fa-gem' },
       { key: 'nath', name: 'Nath', icon: 'fa-circle' }
     ];
-
     const MEN_CATEGORIES = [
       { key: 'rings', name: 'Rings', icon: 'fa-ring' },
       { key: 'chains', name: 'Chains', icon: 'fa-link' },
@@ -928,30 +1014,14 @@
       { key: 'cufflinks', name: 'Cufflinks', icon: 'fa-gem' },
       { key: 'brooches', name: 'Brooches', icon: 'fa-star' }
     ];
-
-    const WOMEN_WEDDING_OCCASIONS = [
-      { key: 'bridal', name: 'Bridal' }, { key: 'baraat', name: 'Baraat' },
-      { key: 'mehndi', name: 'Mehndi' }, { key: 'walima', name: 'Walima' },
-      { key: 'nikah', name: 'Nikah' }, { key: 'wedding-guest', name: 'Wedding Guest' }
-    ];
-
+    const WOMEN_WEDDING_OCCASIONS = [{ key: 'bridal', name: 'Bridal' }, { key: 'baraat', name: 'Baraat' }, { key: 'mehndi', name: 'Mehndi' }, { key: 'walima', name: 'Walima' }, { key: 'nikah', name: 'Nikah' }, { key: 'wedding-guest', name: 'Wedding Guest' }];
     const WOMEN_FESTIVE_OCCASIONS = [{ key: 'eid', name: 'Eid' }];
     const WOMEN_PARTY_OCCASIONS = [{ key: 'party', name: 'Party' }, { key: 'formal', name: 'Formal' }];
-    const WOMEN_EVERYDAY_OCCASIONS = [
-      { key: 'get-together', name: 'Get-Together' }, { key: 'daily-wear', name: 'Daily Wear' }, { key: 'office', name: 'Office Wear' }
-    ];
-
-    const MEN_WEDDING_OCCASIONS = [
-      { key: 'baraat', name: 'Baraat' }, { key: 'mehndi', name: 'Mehndi' },
-      { key: 'nikah', name: 'Nikah' }, { key: 'walima', name: 'Walima' }, { key: 'wedding-guest', name: 'Wedding Guest' }
-    ];
+    const WOMEN_EVERYDAY_OCCASIONS = [{ key: 'get-together', name: 'Get-Together' }, { key: 'daily-wear', name: 'Daily Wear' }, { key: 'office', name: 'Office Wear' }];
+    const MEN_WEDDING_OCCASIONS = [{ key: 'baraat', name: 'Baraat' }, { key: 'mehndi', name: 'Mehndi' }, { key: 'nikah', name: 'Nikah' }, { key: 'walima', name: 'Walima' }, { key: 'wedding-guest', name: 'Wedding Guest' }];
     const MEN_FESTIVE_OCCASIONS = [{ key: 'eid', name: 'Eid' }];
-    const MEN_FORMAL_OCCASIONS = [
-      { key: 'formal', name: 'Formal' }, { key: 'party', name: 'Party' }, { key: 'office', name: 'Office' }
-    ];
-    const MEN_EVERYDAY_OCCASIONS = [
-      { key: 'daily-wear', name: 'Daily Wear' }, { key: 'casual', name: 'Casual' }, { key: 'get-together', name: 'Get-Together' }
-    ];
+    const MEN_FORMAL_OCCASIONS = [{ key: 'formal', name: 'Formal' }, { key: 'party', name: 'Party' }, { key: 'office', name: 'Office' }];
+    const MEN_EVERYDAY_OCCASIONS = [{ key: 'daily-wear', name: 'Daily Wear' }, { key: 'casual', name: 'Casual' }, { key: 'get-together', name: 'Get-Together' }];
 
     // ============================================================
     // STATE
@@ -960,6 +1030,7 @@
     let wishlist = [];
     let currentFilters = { category: [], occasion: [], style: [], minPrice: null, maxPrice: null };
     let currentSort = 'featured';
+    let productQty = 1;
 
     // ============================================================
     // HELPERS
@@ -974,15 +1045,24 @@
       }
       return stars;
     }
+    function imgTag(src, alt, gender, category, cls) {
+      const fb = getCategoryFallback(gender, category);
+      const c = cls ? ` class="${cls}"` : '';
+      return `<img src="${src}" alt="${alt}"${c} loading="lazy" onerror="this.onerror=null;this.src='${fb}';">`;
+    }
 
     // ============================================================
     // ROUTING
     // ============================================================
     function navigateTo(route, replace = false) {
-      const state = { route, timestamp: Date.now() };
-      if (replace) history.replaceState(state, '', '');
-      else history.pushState(state, '', '');
-      renderRoute(route);
+      try {
+        const state = { route, timestamp: Date.now() };
+        if (replace) history.replaceState(state, '', '');
+        else history.pushState(state, '', '');
+        renderRoute(route);
+      } catch (err) {
+        console.error('[ZIVARA] Navigation error:', err);
+      }
     }
 
     function renderRoute(route) {
@@ -997,13 +1077,16 @@
         case 'new-arrivals': renderSpecialCollection('new-arrivals'); break;
         case 'sale': renderSpecialCollection('sale'); break;
         case 'collections': renderCollectionsIndex(); break;
+        case 'contact': renderContact(); break;
         default: renderHome();
       }
     }
 
     window.addEventListener('popstate', function(e) {
-      if (e.state && e.state.route) renderRoute(e.state.route);
-      else renderHome();
+      try {
+        if (e.state && e.state.route) renderRoute(e.state.route);
+        else renderHome();
+      } catch (err) { console.error('[ZIVARA] popstate error:', err); }
     });
 
     function goBack() {
@@ -1045,15 +1128,15 @@
             <div class="section-title"><h2>Shop By Audience</h2><p>Curated jewelry for every story, every celebration.</p></div>
             <div class="landing-grid">
               <div class="landing-card" onclick='navigateTo({type:"landing", gender:"women"})'>
-                <img src="${IMG.set1}" alt="Women's jewelry" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">
+                ${imgTag(IMG_CATEGORY['jewelry-sets'][0], "Women's jewelry", "women", "jewelry-sets")}
                 <div class="overlay-text"><h3>Women</h3><p>Discover elegant jewelry for weddings, celebrations and everyday moments.</p></div>
               </div>
               <div class="landing-card" onclick='navigateTo({type:"landing", gender:"men"})'>
-                <img src="${IMG.mch1}" alt="Men's jewelry" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">
+                ${imgTag(IMG_CATEGORY['men-chains'][0], "Men's jewelry", "men", "chains")}
                 <div class="overlay-text"><h3>Men</h3><p>Explore refined jewelry and accessories designed for modern men.</p></div>
               </div>
               <div class="landing-card" onclick='navigateTo({type:"best-sellers", gender:"all"})'>
-                <img src="${IMG.neck1}" alt="Best sellers" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">
+                ${imgTag(IMG_CATEGORY['necklaces'][0], "Best sellers", "women", "necklaces")}
                 <div class="overlay-text"><h3>Best Sellers</h3><p>Discover the pieces everyone is loving.</p></div>
               </div>
             </div>
@@ -1079,17 +1162,17 @@
             <div class="section-title"><h2>Shop By Occasion</h2><p>Jewelry for every memorable moment.</p></div>
             <div class="occasion-grid">
               ${[
-                { name: 'Bridal', key: 'bridal', img: IMG.set1 },
-                { name: 'Baraat', key: 'baraat', img: IMG.neck1 },
-                { name: 'Mehndi', key: 'mehndi', img: IMG.jhu1 },
-                { name: 'Walima', key: 'walima', img: IMG.set2 },
-                { name: 'Nikah', key: 'nikah', img: IMG.neck2 },
-                { name: 'Eid', key: 'eid', img: IMG.ear1 },
-                { name: 'Party', key: 'party', img: IMG.chk1 },
-                { name: 'Get-Together', key: 'get-together', img: IMG.bra1 }
+                { name: 'Bridal', key: 'bridal', cat: 'jewelry-sets' },
+                { name: 'Baraat', key: 'baraat', cat: 'necklaces' },
+                { name: 'Mehndi', key: 'mehndi', cat: 'jhumkas' },
+                { name: 'Walima', key: 'walima', cat: 'jewelry-sets' },
+                { name: 'Nikah', key: 'nikah', cat: 'necklaces' },
+                { name: 'Eid', key: 'eid', cat: 'earrings' },
+                { name: 'Party', key: 'party', cat: 'chokers' },
+                { name: 'Get-Together', key: 'get-together', cat: 'bracelets' }
               ].map(o => `
                 <div class="occasion-card" onclick='navigateTo({type:"collection", gender:"women", occasion:"${o.key}"})'>
-                  <img src="${o.img}" alt="${o.name}" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">
+                  ${imgTag(IMG_CATEGORY[o.cat][0], o.name, "women", o.cat)}
                   <div class="overlay-text"><h4>${o.name}</h4></div>
                 </div>
               `).join('')}
@@ -1102,15 +1185,15 @@
             <div class="section-title"><h2>Featured ZIVARA Collections</h2><p>Curated edits for the modern muse.</p></div>
             <div class="landing-grid">
               <div class="landing-card" onclick='navigateTo({type:"collection", gender:"women", occasion:"bridal"})'>
-                <img src="${IMG.set3}" alt="The Bridal Edit" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">
+                ${imgTag(IMG_CATEGORY['jewelry-sets'][2], "The Bridal Edit", "women", "jewelry-sets")}
                 <div class="overlay-text"><h3>The Bridal Edit</h3><p>Statement jewelry for your most unforgettable day.</p></div>
               </div>
               <div class="landing-card" onclick='navigateTo({type:"collection", gender:"women", occasion:"mehndi"})'>
-                <img src="${IMG.jhu2}" alt="The Mehndi Glow" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">
+                ${imgTag(IMG_CATEGORY['jhumkas'][1], "The Mehndi Glow", "women", "jhumkas")}
                 <div class="overlay-text"><h3>The Mehndi Glow</h3><p>Vibrant, festive pieces for the celebration of color.</p></div>
               </div>
               <div class="landing-card" onclick='navigateTo({type:"landing", gender:"men"})'>
-                <img src="${IMG.mch2}" alt="The Men's Edit" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">
+                ${imgTag(IMG_CATEGORY['men-chains'][1], "The Men's Edit", "men", "chains")}
                 <div class="overlay-text"><h3>The Men's Edit</h3><p>Refined accessories for the modern gentleman.</p></div>
               </div>
             </div>
@@ -1226,7 +1309,7 @@
           </div>
 
           <div class="section">
-            <div class="section-title"><h2>${isWomen ? 'Party & Formal' : 'Formal'}</h2><p>${isWomen ? 'Make a statement.' : 'For the modern gentleman.'}</p></div>
+            <div class="section-title"><h2>${isWomen ? 'Party & Formal' : 'Formal'}</h2></div>
             <div class="category-grid">
               ${formalOcc.map(o => {
                 const count = PRODUCTS.filter(p => p.gender === gender && p.occasion.includes(o.key)).length;
@@ -1238,7 +1321,7 @@
           </div>
 
           <div class="section section-alt">
-            <div class="section-title"><h2>Everyday</h2><p>Effortless elegance.</p></div>
+            <div class="section-title"><h2>Everyday</h2></div>
             <div class="category-grid">
               ${everydayOcc.map(o => {
                 const count = PRODUCTS.filter(p => p.gender === gender && p.occasion.includes(o.key)).length;
@@ -1338,9 +1421,6 @@
       renderFilteredProducts();
     }
 
-    // ============================================================
-    // BEST SELLERS
-    // ============================================================
     function renderBestSellers(gender) {
       const container = document.getElementById('pageContainer');
       container.innerHTML = `
@@ -1365,9 +1445,6 @@
       document.getElementById('bestSellerProducts').innerHTML = products.map(p => renderProductCard(p)).join('');
     }
 
-    // ============================================================
-    // SPECIAL COLLECTIONS
-    // ============================================================
     function renderSpecialCollection(type) {
       const isNew = type === 'new-arrivals';
       const title = isNew ? 'New Arrivals' : 'Sale';
@@ -1387,20 +1464,17 @@
       `;
     }
 
-    // ============================================================
-    // COLLECTIONS INDEX
-    // ============================================================
     function renderCollectionsIndex() {
       const collections = [
-        { name: 'The Bridal Edit', key: 'bridal', gender: 'women', img: IMG.set1 },
-        { name: 'The Mehndi Glow', key: 'mehndi', gender: 'women', img: IMG.jhu1 },
-        { name: 'The Baraat Collection', key: 'baraat', gender: 'women', img: IMG.neck1 },
-        { name: 'The Walima Edit', key: 'walima', gender: 'women', img: IMG.set2 },
-        { name: 'The Nikah Collection', key: 'nikah', gender: 'women', img: IMG.neck2 },
-        { name: 'The Eid Edit', key: 'eid', gender: 'women', img: IMG.ear1 },
-        { name: "The Men's Edit", key: null, gender: 'men', img: IMG.mch1 },
-        { name: 'Pearl Collection', key: 'pearl', gender: 'women', img: IMG.neck3 },
-        { name: 'Statement Collection', key: 'statement', gender: 'women', img: IMG.chk1 }
+        { name: 'The Bridal Edit', key: 'bridal', gender: 'women', cat: 'jewelry-sets' },
+        { name: 'The Mehndi Glow', key: 'mehndi', gender: 'women', cat: 'jhumkas' },
+        { name: 'The Baraat Collection', key: 'baraat', gender: 'women', cat: 'necklaces' },
+        { name: 'The Walima Edit', key: 'walima', gender: 'women', cat: 'jewelry-sets' },
+        { name: 'The Nikah Collection', key: 'nikah', gender: 'women', cat: 'necklaces' },
+        { name: 'The Eid Edit', key: 'eid', gender: 'women', cat: 'earrings' },
+        { name: "The Men's Edit", key: null, gender: 'men', cat: 'chains' },
+        { name: 'Pearl Collection', key: 'pearl', gender: 'women', cat: 'necklaces' },
+        { name: 'Statement Collection', key: 'statement', gender: 'women', cat: 'chokers' }
       ];
 
       const container = document.getElementById('pageContainer');
@@ -1414,7 +1488,7 @@
           <div class="landing-grid" style="padding-bottom:80px;">
             ${collections.map(c => `
               <div class="landing-card" onclick='navigateTo(${JSON.stringify(c.key ? {type:"collection", gender:c.gender, occasion:c.key} : {type:"landing", gender:c.gender})})'>
-                <img src="${c.img}" alt="${c.name}" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">
+                ${imgTag(IMG_CATEGORY[c.gender === 'men' ? 'men-' + c.cat : c.cat][0], c.name, c.gender, c.cat)}
                 <div class="overlay-text"><h3>${c.name}</h3></div>
               </div>
             `).join('')}
@@ -1423,21 +1497,106 @@
       `;
     }
 
-    // ============================================================
-    // PRODUCT CARD
-    // ============================================================
+    function renderContact() {
+      const container = document.getElementById('pageContainer');
+      container.innerHTML = `
+        <div class="collection-hero">
+          <div class="collection-hero-content">
+            <h1>Contact ZIVARA</h1>
+            <p>We would love to hear from you. Get in touch with us for any questions, product information, orders or assistance.</p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="page-toolbar">
+            ${backButtonHTML()}
+            <div class="breadcrumbs">${breadcrumbsHTML([{ label: 'Home', route: { type: 'home' } }, { label: 'Contact' }])}</div>
+          </div>
+
+          <div class="section" style="padding-top:20px;">
+            <div class="contact-info-block">
+              <h2 style="margin-bottom:16px;">Get In Touch</h2>
+              <p>Reach out to <strong>Saim Faisal</strong> directly through any of the channels below. We typically respond within a few hours.</p>
+            </div>
+
+            <div class="contact-grid">
+              <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <div class="contact-value">saimfaisal88227@gmail.com</div>
+                <a href="mailto:saimfaisal88227@gmail.com" class="btn btn-solid">EMAIL US</a>
+              </div>
+              <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <div class="contact-value">03004030301</div>
+                <a href="tel:+923004030301" class="btn btn-solid">CALL US</a>
+              </div>
+              <div class="contact-card">
+                <i class="fab fa-whatsapp"></i>
+                <h3>WhatsApp</h3>
+                <div class="contact-value">03004030301</div>
+                <a href="https://wa.me/923004030301" target="_blank" rel="noopener" class="btn btn-solid">CHAT ON WHATSAPP</a>
+              </div>
+            </div>
+
+            <div class="contact-form">
+              <h3 style="text-align:center; margin-bottom:24px; font-family:var(--font-serif);">Send Us a Message</h3>
+              <div class="form-success" id="formSuccess">Thank you! Your message has been noted. We will respond to you at the contact information you provided.</div>
+              <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" required placeholder="Your full name">
+                  </div>
+                  <div class="form-group">
+                    <label for="emailAddr">Email Address *</label>
+                    <input type="email" id="emailAddr" required placeholder="you@example.com">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phoneNum">Phone Number</label>
+                    <input type="tel" id="phoneNum" placeholder="03XXXXXXXXX">
+                  </div>
+                  <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" required placeholder="How can we help?">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" required placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-solid">SEND MESSAGE</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const successEl = document.getElementById('formSuccess');
+      successEl.classList.add('show');
+      document.getElementById('contactForm').reset();
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => successEl.classList.remove('show'), 8000);
+    }
+
     function renderProductCard(p) {
       const inWishlist = wishlist.includes(p.id);
       let badge = '';
       if (p.isBestSeller) badge = '<span class="product-badge">Best Seller</span>';
       else if (p.isNew) badge = '<span class="product-badge new">New</span>';
       else if (p.isSale) badge = '<span class="product-badge sale">Sale</span>';
+      const fb = getCategoryFallback(p.gender, p.category);
 
       return `
         <div class="product-card">
           <div class="product-image" onclick='navigateTo({type:"product", productId:${p.id}})'>
             ${badge}
-            <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='${FALLBACK_IMG}'">
+            <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='${fb}';">
             <button class="wishlist-btn ${inWishlist ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlist(${p.id})"><i class="fas fa-heart"></i></button>
             <button class="quick-view-btn" onclick="event.stopPropagation(); openQuickView(${p.id})">Quick View</button>
           </div>
@@ -1455,9 +1614,6 @@
       `;
     }
 
-    // ============================================================
-    // FILTERING
-    // ============================================================
     function renderFilteredProducts() {
       let products = window.__baseProducts || [];
       if (currentFilters.category.length > 0) products = products.filter(p => currentFilters.category.includes(p.category));
@@ -1516,9 +1672,6 @@
       renderFilteredProducts();
     }
 
-    // ============================================================
-    // PRODUCT DETAIL
-    // ============================================================
     function renderProductPage(id) {
       const p = PRODUCTS.find(prod => prod.id === id);
       if (!p) { renderHome(); return; }
@@ -1530,12 +1683,12 @@
         { label: p.name }
       ];
 
-      const related = PRODUCTS.filter(prod =>
-        prod.id !== p.id && prod.gender === p.gender &&
-        (prod.category === p.category || prod.occasion.some(o => p.occasion.includes(o)))
-      ).slice(0, 4);
+      const sameCat = PRODUCTS.filter(prod => prod.id !== p.id && prod.gender === p.gender && prod.category === p.category);
+      const overlapOcc = PRODUCTS.filter(prod => prod.id !== p.id && prod.gender === p.gender && prod.category !== p.category && prod.occasion.some(o => p.occasion.includes(o)));
+      const related = [...sameCat, ...overlapOcc].slice(0, 4);
 
       const gallery = p.gallery && p.gallery.length > 0 ? p.gallery : [p.image];
+      const fb = getCategoryFallback(p.gender, p.category);
 
       const container = document.getElementById('pageContainer');
       container.innerHTML = `
@@ -1547,10 +1700,10 @@
           <div class="product-detail-layout">
             <div>
               <div class="product-gallery-main">
-                <img src="${gallery[0]}" alt="${p.name}" id="mainImage" onerror="this.src='${FALLBACK_IMG}'">
+                <img src="${gallery[0]}" alt="${p.name}" id="mainImage" onerror="this.onerror=null;this.src='${fb}';">
               </div>
               <div class="product-gallery-thumbs">
-                ${gallery.map((img, i) => `<img src="${img}" alt="${p.name} view ${i+1}" class="${i===0?'active':''}" onerror="this.src='${FALLBACK_IMG}'" onclick="document.getElementById('mainImage').src=this.src; document.querySelectorAll('.product-gallery-thumbs img').forEach(i=>i.classList.remove('active')); this.classList.add('active');">`).join('')}
+                ${gallery.map((img, i) => `<img src="${img}" alt="${p.name} view ${i+1}" class="${i===0?'active':''}" onerror="this.onerror=null;this.src='${fb}';" onclick="document.getElementById('mainImage').src=this.src; document.querySelectorAll('.product-gallery-thumbs img').forEach(i=>i.classList.remove('active')); this.classList.add('active');">`).join('')}
               </div>
             </div>
             <div class="product-detail-info">
@@ -1610,7 +1763,6 @@
       productQty = 1;
     }
 
-    let productQty = 1;
     function changeQty(delta) {
       productQty = Math.max(1, productQty + delta);
       const el = document.getElementById('productQty');
@@ -1624,9 +1776,6 @@
       document.getElementById('tab-' + tabId).classList.add('active');
     }
 
-    // ============================================================
-    // CART
-    // ============================================================
     function addToCart(id) {
       const p = PRODUCTS.find(prod => prod.id === id);
       if (!p) return;
@@ -1659,9 +1808,11 @@
         return;
       }
 
-      itemsEl.innerHTML = cart.map(item => `
+      itemsEl.innerHTML = cart.map(item => {
+        const fb = getCategoryFallback(item.product.gender, item.product.category);
+        return `
         <div class="cart-item">
-          <img src="${item.product.image}" alt="${item.product.name}" onerror="this.src='${FALLBACK_IMG}'">
+          <img src="${item.product.image}" alt="${item.product.name}" onerror="this.onerror=null;this.src='${fb}';">
           <div class="cart-item-info">
             <h4>${item.product.name}</h4>
             <div class="price">${formatPrice(item.product.salePrice)}</div>
@@ -1672,8 +1823,8 @@
             </div>
             <button class="cart-item-remove" onclick="removeFromCart(${item.id})">Remove</button>
           </div>
-        </div>
-      `).join('');
+        </div>`;
+      }).join('');
 
       const subtotal = cart.reduce((sum, item) => sum + item.product.salePrice * item.qty, 0);
       const shipping = subtotal >= 3000 ? 0 : 200;
@@ -1697,12 +1848,9 @@
 
     function checkout() {
       if (cart.length === 0) return;
-      alert('Proceeding to checkout. Total: ' + document.getElementById('cartTotal').textContent);
+      alert('Proceeding to checkout. Total: ' + document.getElementById('cartTotal').textContent + '\\n\\nContact us at saimfaisal88227@gmail.com or 03004030301 to complete your order.');
     }
 
-    // ============================================================
-    // WISHLIST
-    // ============================================================
     function toggleWishlist(id) {
       const idx = wishlist.indexOf(id);
       if (idx > -1) wishlist.splice(idx, 1);
@@ -1737,18 +1885,17 @@
       `;
     }
 
-    // ============================================================
-    // QUICK VIEW
-    // ============================================================
     function openQuickView(id) {
       const p = PRODUCTS.find(prod => prod.id === id);
       if (!p) return;
+      const fb = getCategoryFallback(p.gender, p.category);
       document.getElementById('quickViewContent').innerHTML = `
-        <div><img src="${p.image}" alt="${p.name}" onerror="this.src='${FALLBACK_IMG}'"></div>
+        <div><img src="${p.image}" alt="${p.name}" onerror="this.onerror=null;this.src='${fb}';"></div>
         <div class="quick-view-info">
           <h2>${p.name}</h2>
           <div class="rating">${getStars(p.rating)} <span style="color:#999;">(${p.reviews} reviews)</span></div>
           <div class="price">${formatPrice(p.salePrice)}<span class="original">${formatPrice(p.price)}</span></div>
+          <p style="font-size:0.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;">${p.gender === 'men' ? "Men's" : "Women's"} ${p.category}</p>
           <p>${p.description}</p>
           <button class="btn btn-solid" style="width:100%;" onclick="addToCart(${p.id}); closeQuickView();">Add to Cart</button>
           <button class="btn" style="width:100%; margin-top:8px;" onclick="closeQuickView(); navigateTo({type:'product', productId:${p.id}});">View Full Details</button>
@@ -1764,9 +1911,6 @@
       document.body.style.overflow = '';
     }
 
-    // ============================================================
-    // SEARCH
-    // ============================================================
     function openSearch() {
       document.getElementById('searchModal').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -1795,17 +1939,16 @@
         resultsEl.innerHTML = `<div class="no-results"><i class="fas fa-search"></i><p>No products found for "${query}"</p></div>`;
         return;
       }
-      resultsEl.innerHTML = results.map(p => `
+      resultsEl.innerHTML = results.map(p => {
+        const fb = getCategoryFallback(p.gender, p.category);
+        return `
         <div class="search-result-item" onclick="closeSearch(); navigateTo({type:'product', productId:${p.id}});">
-          <img src="${p.image}" alt="${p.name}" onerror="this.src='${FALLBACK_IMG}'">
+          <img src="${p.image}" alt="${p.name}" onerror="this.onerror=null;this.src='${fb}';">
           <div class="info"><h4>${p.name}</h4><div class="price">${formatPrice(p.salePrice)}</div></div>
-        </div>
-      `).join('');
+        </div>`;
+      }).join('');
     }
 
-    // ============================================================
-    // MOBILE DRAWER
-    // ============================================================
     document.getElementById('hamburger').addEventListener('click', function() {
       document.getElementById('mobileDrawer').classList.add('open');
       document.getElementById('overlay').classList.add('active');
@@ -1821,17 +1964,8 @@
     }
 
     // ============================================================
-    // INIT
+    // INIT — runs inside the outer try/catch
     // ============================================================
-    window.addEventListener('load', function() {
-      setTimeout(() => {
-        document.getElementById('preloader').classList.add('hidden');
-        document.body.style.overflow = '';
-      }, 1800);
-    });
-
-    document.body.style.overflow = 'hidden';
-
     history.replaceState({ route: { type: 'home' } }, '', '');
     renderHome();
     updateCartUI();
@@ -1842,6 +1976,12 @@
       if (window.scrollY > 50) navbar.style.boxShadow = '0 10px 30px -10px rgba(0,0,0,0.1)';
       else navbar.style.boxShadow = 'none';
     });
+
+    } catch (err) {
+      // If anything in the main script fails, the preloader still hides
+      // because of the guaranteedPreloaderHide() block at the top.
+      console.error('[ZIVARA] Fatal initialization error:', err);
+    }
   </script>
 
 </body>
