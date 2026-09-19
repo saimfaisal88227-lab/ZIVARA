@@ -1,0 +1,3374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>ZIVARA | Elegant Artificial & Fashion Jewelry for Women & Men</title>
+  <meta name="description" content="Discover ZIVARA's elegant artificial and fashion jewelry for women and men. Shop bridal sets, wedding jewelry, earrings, necklaces, rings, bracelets, Eid jewelry and everyday styles.">
+  <meta name="keywords" content="ZIVARA jewelry, artificial jewelry, fashion jewelry, jewelry online Pakistan, bridal jewelry Pakistan, wedding jewelry, Mehndi jewelry, Eid jewelry, women's jewelry, men's jewelry">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ---------- RESET & GLOBAL ---------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black: #0a0a0a;
+      --charcoal: #1e1e1e;
+      --gold: #c6a15b;
+      --champagne: #e6d5b8;
+      --ivory: #faf8f5;
+      --cream: #f5f0e8;
+      --white: #ffffff;
+      --gold-light: #dbbc7a;
+      --gold-dark: #a5833e;
+      --shadow-sm: 0 10px 30px -10px rgba(0,0,0,0.08);
+      --shadow-md: 0 20px 40px -15px rgba(0,0,0,0.15);
+      --shadow-lg: 0 30px 60px -20px rgba(0,0,0,0.25);
+      --transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Montserrat', sans-serif;
+      --border-radius: 8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--ivory);
+      color: var(--charcoal);
+      line-height: 1.5;
+      overflow-x: hidden;
+      font-weight: 400;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; height: auto; }
+
+    .container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- TYPOGRAPHY ---------- */
+    h1, h2, h3, h4 {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
+    h3 { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+
+    .section-title { text-align: center; margin-bottom: 48px; }
+
+    .section-title h2 {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .section-title p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 600px;
+      margin: 16px auto 0;
+    }
+
+    /* ---------- PRELOADER ---------- */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1s ease, visibility 1s ease;
+    }
+
+    #preloader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+    .preloader-ring {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid rgba(198, 161, 91, 0.15);
+      border-top: 2px solid var(--gold);
+      border-right: 2px solid var(--gold-light);
+      animation: spin 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+      position: relative;
+      box-shadow: 0 0 60px rgba(198, 161, 91, 0.2);
+    }
+
+    .preloader-ring::before {
+      content: '◆';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+      color: var(--gold);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.9); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    .preloader-logo {
+      margin-top: 32px;
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      color: var(--white);
+      letter-spacing: 0.2em;
+      font-weight: 400;
+      text-shadow: 0 0 40px rgba(198, 161, 91, 0.4);
+    }
+
+    .preloader-tagline {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      letter-spacing: 0.5em;
+      color: var(--gold);
+      margin-top: 8px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    /* ---------- ANNOUNCEMENT BAR ---------- */
+    .announcement-bar {
+      background: var(--black);
+      color: var(--champagne);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-align: center;
+      padding: 10px 16px;
+      font-weight: 400;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(198, 161, 91, 0.2);
+    }
+
+    /* ---------- NAVIGATION ---------- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(198, 161, 91, 0.15);
+      transition: var(--transition);
+    }
+
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      position: relative;
+    }
+
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 0.15em;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-menu { display: flex; gap: 28px; align-items: center; }
+    .nav-menu > li { position: static; }
+
+    .nav-menu > li > a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      padding: 8px 0;
+      transition: var(--transition);
+      border-bottom: 2px solid transparent;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .nav-menu > li > a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+    .nav-actions { display: flex; gap: 20px; align-items: center; }
+
+    .nav-actions a, .nav-actions button {
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      transition: var(--transition);
+      position: relative;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+    }
+
+    .nav-actions a:hover, .nav-actions button:hover { color: var(--gold); }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -12px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.6rem;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .hamburger { display: none; font-size: 1.5rem; cursor: pointer; color: var(--charcoal); }
+
+    /* ---------- MEGA MENU ---------- */
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      width: 100vw;
+      max-width: 100vw;
+      background: var(--white);
+      border-top: 1px solid rgba(198, 161, 91, 0.15);
+      box-shadow: var(--shadow-md);
+      padding: 40px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 998;
+      pointer-events: none;
+    }
+
+    .nav-menu > li:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+      pointer-events: auto;
+    }
+
+    .mega-menu .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .mega-menu h4 {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .mega-menu ul li { margin-bottom: 10px; }
+    .mega-menu ul li a { font-size: 0.85rem; color: #555; transition: var(--transition); display: inline-block; cursor: pointer; }
+    .mega-menu ul li a:hover { color: var(--gold); transform: translateX(4px); }
+
+    /* ---------- MOBILE DRAWER ---------- */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 380px;
+      height: 100vh;
+      background: var(--white);
+      z-index: 2000;
+      box-shadow: var(--shadow-lg);
+      transition: right 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      overflow-y: auto;
+      padding: 30px 24px;
+    }
+
+    .mobile-drawer.open { right: 0; }
+    .mobile-drawer .close-btn { font-size: 1.8rem; color: var(--charcoal); cursor: pointer; margin-bottom: 30px; display: block; text-align: right; }
+    .mobile-drawer .nav-links li { border-bottom: 1px solid #eee; padding: 16px 0; }
+    .mobile-drawer .nav-links li a { font-size: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--charcoal); display: block; cursor: pointer; }
+    .mobile-drawer .nav-links li a:hover { color: var(--gold); }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .overlay.active { opacity: 1; visibility: visible; }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1e1e1e 100%);
+      overflow: hidden;
+      padding: 80px 24px;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1600&q=80') center/cover no-repeat;
+      opacity: 0.25;
+      mix-blend-mode: luminosity;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 900px; }
+    .hero h1 { color: var(--white); margin-bottom: 16px; text-shadow: 0 4px 40px rgba(0,0,0,0.5); }
+    .hero p { color: var(--champagne); font-size: 1.2rem; font-weight: 300; letter-spacing: 0.05em; margin-bottom: 40px; }
+    .hero-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 2px solid var(--gold);
+      background: transparent;
+      color: var(--white);
+      transition: var(--transition);
+      cursor: pointer;
+      border-radius: 0;
+      font-family: var(--font-sans);
+    }
+
+    .btn:hover { background: var(--gold); color: var(--black); }
+    .btn-solid { background: var(--gold); color: var(--black); }
+    .btn-solid:hover { background: transparent; color: var(--gold); }
+
+    /* ---------- SECTION ---------- */
+    .section { padding: 80px 0; }
+    .section-alt { background: var(--cream); }
+
+    /* ---------- AUDIENCE CARDS ---------- */
+    .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+    .audience-card {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .audience-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .audience-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .audience-card:hover img { transform: scale(1.08); }
+
+    .audience-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 32px;
+      color: var(--white);
+    }
+
+    .audience-overlay h3 { font-size: 2rem; margin-bottom: 8px; }
+    .audience-overlay p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 16px; }
+    .audience-overlay .btn { padding: 12px 28px; font-size: 0.7rem; border-color: var(--white); align-self: flex-start; }
+    .audience-overlay .btn:hover { background: var(--white); color: var(--black); }
+
+    /* ---------- CATEGORY GRID ---------- */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .category-card {
+      text-align: center;
+      padding: 24px 12px;
+      background: var(--white);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid rgba(198, 161, 91, 0.1);
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold);
+    }
+
+    .category-card i { font-size: 2rem; color: var(--gold); margin-bottom: 12px; }
+    .category-card h4 { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 4px; }
+    .category-card span { font-size: 0.7rem; color: #999; }
+
+    /* ---------- PRODUCT CARDS ---------- */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      border: 1px solid rgba(198, 161, 91, 0.08);
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
+    }
+
+    .product-image {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1/1;
+      background: #f9f6f2;
+      cursor: pointer;
+    }
+
+    .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .product-card:hover .product-image img { transform: scale(1.05); }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .product-badge.sale { background: #d9534f; }
+    .product-badge.new { background: #2c7a4a; }
+
+    .wishlist-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--charcoal);
+      transition: var(--transition);
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-sm);
+      z-index: 2;
+    }
+
+    .wishlist-btn:hover { background: var(--gold); color: var(--white); }
+    .wishlist-btn.active { background: var(--gold); color: var(--white); }
+
+    .quick-view-btn {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--white);
+      border: 1px solid var(--gold);
+      color: var(--charcoal);
+      padding: 8px 16px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      opacity: 0;
+      transition: var(--transition);
+      font-family: var(--font-sans);
+      z-index: 2;
+    }
+
+    .product-card:hover .quick-view-btn { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .quick-view-btn:hover { background: var(--gold); color: var(--white); }
+
+    .product-info { padding: 20px; }
+
+    .product-info h4 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--charcoal);
+      cursor: pointer;
+    }
+
+    .product-info h4:hover { color: var(--gold); }
+
+    .product-info .rating { font-size: 0.75rem; color: var(--gold); margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+    .product-info .rating span { color: #999; font-size: 0.7rem; }
+
+    .product-price { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .product-price .current { font-size: 1.1rem; font-weight: 600; color: var(--charcoal); }
+    .product-price .original { font-size: 0.8rem; color: #999; text-decoration: line-through; }
+    .product-price .discount { font-size: 0.7rem; color: #d9534f; font-weight: 600; }
+
+    .add-to-cart-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--black);
+      color: var(--white);
+      border: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-sans);
+    }
+
+    .add-to-cart-btn:hover { background: var(--gold); color: var(--black); }
+
+    /* ---------- OCCASION GRID ---------- */
+    .occasion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .occasion-card {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .occasion-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .occasion-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .occasion-card:hover img { transform: scale(1.08); }
+
+    .occasion-card .overlay-text {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 70%);
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: var(--white);
+    }
+
+    .occasion-card .overlay-text h4 { font-family: var(--font-sans); font-size: 1rem; font-weight: 500; letter-spacing: 0.05em; }
+
+    /* ---------- COLLECTION CARDS ---------- */
+    .collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+    .collection-card {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .collection-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .collection-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .collection-card:hover img { transform: scale(1.06); }
+
+    .collection-card .overlay-text {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 65%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      color: var(--white);
+    }
+
+    .collection-card .overlay-text h3 { font-size: 1.8rem; margin-bottom: 8px; }
+    .collection-card .overlay-text p { font-size: 0.85rem; opacity: 0.9; }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 32px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--gold);
+    }
+
+    .testimonial-card .stars { color: var(--gold); margin-bottom: 12px; }
+    .testimonial-card p { font-size: 0.9rem; color: #555; font-style: italic; margin-bottom: 16px; line-height: 1.6; }
+    .testimonial-card .author { font-size: 0.8rem; font-weight: 600; color: var(--charcoal); }
+    .testimonial-card .verified { font-size: 0.7rem; color: var(--gold); display: block; margin-top: 4px; }
+
+    /* ---------- INSTAGRAM GRID ---------- */
+    .insta-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+
+    .insta-item {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      position: relative;
+      cursor: pointer;
+    }
+
+    .insta-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .insta-item:hover img { transform: scale(1.1); }
+
+    .insta-item::after {
+      content: '\f16d';
+      font-family: 'Font Awesome 6 Brands';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .insta-item:hover::after { opacity: 1; }
+
+    /* ---------- NEWSLETTER ---------- */
+    .newsletter { background: var(--black); color: var(--white); text-align: center; padding: 80px 24px; }
+    .newsletter h2 { color: var(--white); margin-bottom: 12px; }
+    .newsletter p { color: var(--champagne); margin-bottom: 30px; font-weight: 300; }
+
+    .newsletter-form { display: flex; max-width: 500px; margin: 0 auto; gap: 0; }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 16px 20px;
+      border: 1px solid rgba(198, 161, 91, 0.3);
+      background: rgba(255,255,255,0.05);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+
+    .newsletter-form button {
+      padding: 16px 32px;
+      background: var(--gold);
+      border: none;
+      color: var(--black);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-sans);
+    }
+
+    .newsletter-form button:hover { background: var(--gold-light); }
+
+    /* ---------- FOOTER ---------- */
+    .footer { background: var(--charcoal); color: #ccc; padding: 60px 0 20px; font-size: 0.85rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+
+    .footer h4 {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .footer ul li { margin-bottom: 10px; }
+    .footer ul li a { color: #aaa; transition: var(--transition); cursor: pointer; }
+    .footer ul li a:hover { color: var(--gold); }
+    .footer .logo { color: var(--white); font-size: 2.2rem; margin-bottom: 12px; }
+    .footer .tagline { color: var(--champagne); font-size: 0.8rem; margin-bottom: 20px; font-style: italic; }
+    .social-icons { display: flex; gap: 16px; }
+    .social-icons a { color: #aaa; font-size: 1.2rem; transition: var(--transition); }
+    .social-icons a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; text-align: center; font-size: 0.75rem; color: #777; }
+
+    /* ---------- COLLECTION PAGE LAYOUT ---------- */
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    .collection-hero {
+      position: relative;
+      height: 380px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1e1e1e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .collection-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+    }
+
+    .collection-hero-content { position: relative; z-index: 2; color: var(--white); padding: 0 24px; }
+    .collection-hero-content h1 { font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 12px; }
+    .collection-hero-content p { color: var(--champagne); font-size: 1rem; max-width: 600px; margin: 0 auto; font-weight: 300; }
+
+    .breadcrumbs {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #999;
+      padding: 20px 0;
+    }
+
+    .breadcrumbs a { color: var(--gold); cursor: pointer; }
+    .breadcrumbs a:hover { color: var(--gold-dark); }
+    .breadcrumbs span { margin: 0 8px; }
+
+    .collection-layout { display: grid; grid-template-columns: 260px 1fr; gap: 40px; padding: 40px 0 80px; }
+
+    .filter-sidebar {
+      background: var(--white);
+      padding: 24px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-sm);
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+      border: 1px solid rgba(198, 161, 91, 0.1);
+    }
+
+    .filter-sidebar h3 {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(198, 161, 91, 0.2);
+    }
+
+    .filter-group { margin-bottom: 24px; }
+
+    .filter-group h5 {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .filter-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-group label:hover { color: var(--gold); }
+    .filter-group input[type="checkbox"] { accent-color: var(--gold); cursor: pointer; }
+
+    .filter-group .price-range { display: flex; gap: 8px; align-items: center; }
+    .filter-group .price-range input {
+      width: 100%;
+      padding: 6px 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      outline: none;
+    }
+
+    .filter-group .price-range input:focus { border-color: var(--gold); }
+
+    .clear-filters {
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-sans);
+      border-radius: 2px;
+    }
+
+    .clear-filters:hover { background: var(--gold); color: var(--white); }
+
+    .collection-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .product-count { font-size: 0.85rem; color: #666; }
+
+    .sort-select {
+      padding: 10px 16px;
+      border: 1px solid rgba(198, 161, 91, 0.3);
+      background: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      color: var(--charcoal);
+      cursor: pointer;
+      border-radius: 2px;
+      outline: none;
+    }
+
+    .sort-select:focus { border-color: var(--gold); }
+
+    /* ---------- PRODUCT DETAIL PAGE ---------- */
+    .product-detail-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      padding: 40px 0 80px;
+    }
+
+    .product-gallery-main {
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      background: #f9f6f2;
+      margin-bottom: 16px;
+    }
+
+    .product-gallery-main img { width: 100%; height: 100%; object-fit: cover; }
+
+    .product-gallery-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .product-gallery-thumbs img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .product-gallery-thumbs img:hover, .product-gallery-thumbs img.active { border-color: var(--gold); }
+
+    .product-detail-info h1 { font-size: 2.2rem; margin-bottom: 12px; }
+    .product-detail-info .rating { color: var(--gold); margin-bottom: 16px; font-size: 0.9rem; }
+    .product-detail-info .rating span { color: #999; }
+
+    .product-detail-price { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .product-detail-price .current { font-size: 1.8rem; font-weight: 600; color: var(--charcoal); }
+    .product-detail-price .original { font-size: 1.1rem; color: #999; text-decoration: line-through; }
+    .product-detail-price .discount { font-size: 0.9rem; color: #d9534f; font-weight: 600; }
+
+    .product-detail-info .description { font-size: 0.95rem; color: #666; line-height: 1.7; margin-bottom: 24px; }
+
+    .product-meta { margin-bottom: 24px; }
+    .product-meta div { display: flex; gap: 12px; font-size: 0.85rem; margin-bottom: 8px; }
+    .product-meta div strong { color: var(--charcoal); min-width: 120px; font-weight: 600; }
+    .product-meta div span { color: #666; }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .quantity-selector button {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ddd;
+      background: var(--white);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-sans);
+    }
+
+    .quantity-selector button:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .quantity-selector span { font-size: 1rem; font-weight: 600; min-width: 40px; text-align: center; }
+
+    .product-detail-actions { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+    .product-detail-actions .btn { padding: 16px 32px; }
+
+    .product-detail-actions .btn-wishlist {
+      background: transparent;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+    }
+
+    .product-detail-actions .btn-wishlist:hover { background: var(--gold); color: var(--white); }
+
+    .product-tabs { margin-top: 40px; }
+
+    .product-tabs-nav {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .product-tabs-nav button {
+      padding: 12px 24px;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #999;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .product-tabs-nav button.active { color: var(--gold); border-bottom-color: var(--gold); }
+    .product-tabs-nav button:hover { color: var(--gold); }
+
+    .product-tab-content { display: none; font-size: 0.9rem; color: #666; line-height: 1.7; }
+    .product-tab-content.active { display: block; }
+
+    /* ---------- CART DRAWER ---------- */
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 420px;
+      height: 100vh;
+      background: var(--white);
+      z-index: 2000;
+      box-shadow: var(--shadow-lg);
+      transition: right 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open { right: 0; }
+
+    .cart-header {
+      padding: 24px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-header h3 { font-family: var(--font-serif); font-size: 1.4rem; }
+    .cart-header .close-btn { font-size: 1.5rem; cursor: pointer; color: var(--charcoal); }
+
+    .cart-items { flex: 1; overflow-y: auto; padding: 24px; }
+
+    .cart-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .cart-item img { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; }
+
+    .cart-item-info { flex: 1; }
+    .cart-item-info h4 { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 500; margin-bottom: 4px; }
+    .cart-item-info .price { font-size: 0.9rem; font-weight: 600; color: var(--gold); margin-bottom: 8px; }
+
+    .cart-item-qty { display: flex; align-items: center; gap: 8px; }
+
+    .cart-item-qty button {
+      width: 28px;
+      height: 28px;
+      border: 1px solid #ddd;
+      background: var(--white);
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .cart-item-qty button:hover { background: var(--gold); color: var(--white); border-color: var(--gold); }
+    .cart-item-qty span { font-size: 0.85rem; font-weight: 600; min-width: 24px; text-align: center; }
+
+    .cart-item-remove {
+      background: none;
+      border: none;
+      color: #d9534f;
+      cursor: pointer;
+      font-size: 0.75rem;
+      margin-top: 8px;
+      font-family: var(--font-sans);
+    }
+
+    .cart-footer {
+      padding: 24px;
+      border-top: 1px solid #eee;
+      background: var(--ivory);
+    }
+
+    .cart-total-row { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 12px; }
+    .cart-total-row.grand { font-size: 1.1rem; font-weight: 600; color: var(--charcoal); margin-top: 12px; padding-top: 12px; border-top: 1px solid #ddd; }
+    .cart-footer .btn { width: 100%; text-align: center; margin-top: 16px; }
+
+    .cart-empty { text-align: center; padding: 60px 24px; color: #999; }
+    .cart-empty i { font-size: 3rem; color: #ddd; margin-bottom: 16px; }
+
+    /* ---------- QUICK VIEW MODAL ---------- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .modal-overlay.active { opacity: 1; visibility: visible; }
+
+    .quick-view-modal {
+      background: var(--white);
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: var(--border-radius);
+      padding: 40px;
+      position: relative;
+      transform: scale(0.95);
+      transition: var(--transition);
+    }
+
+    .modal-overlay.active .quick-view-modal { transform: scale(1); }
+
+    .quick-view-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--charcoal);
+    }
+
+    .quick-view-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .quick-view-layout img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--border-radius); }
+    .quick-view-info h2 { font-size: 1.6rem; margin-bottom: 12px; }
+    .quick-view-info .rating { color: var(--gold); margin-bottom: 12px; font-size: 0.85rem; }
+    .quick-view-info .price { font-size: 1.4rem; font-weight: 600; margin-bottom: 16px; }
+    .quick-view-info .price .original { font-size: 0.9rem; color: #999; text-decoration: line-through; margin-left: 8px; }
+    .quick-view-info p { font-size: 0.85rem; color: #666; line-height: 1.6; margin-bottom: 20px; }
+
+    /* ---------- SEARCH MODAL ---------- */
+    .search-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.98);
+      z-index: 3000;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .search-modal.active { opacity: 1; visibility: visible; }
+
+    .search-modal-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--charcoal);
+    }
+
+    .search-modal .container { max-width: 800px; margin: 0 auto; width: 100%; }
+    .search-modal h2 { text-align: center; margin-bottom: 32px; }
+
+    .search-input-wrapper {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .search-input-wrapper input {
+      width: 100%;
+      padding: 20px 24px;
+      border: 2px solid var(--gold);
+      background: transparent;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      outline: none;
+      border-radius: 0;
+    }
+
+    .search-input-wrapper i {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+
+    .search-results { max-height: 60vh; overflow-y: auto; }
+
+    .search-result-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+      transition: var(--transition);
+      align-items: center;
+    }
+
+    .search-result-item:hover { background: var(--cream); }
+    .search-result-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; }
+    .search-result-item .info h4 { font-family: var(--font-sans); font-size: 0.9rem; font-weight: 500; margin-bottom: 4px; }
+    .search-result-item .info .price { font-size: 0.85rem; color: var(--gold); font-weight: 600; }
+
+    /* ---------- NO RESULTS ---------- */
+    .no-results { text-align: center; padding: 60px 24px; color: #999; }
+    .no-results i { font-size: 3rem; color: #ddd; margin-bottom: 16px; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1024px) {
+      .nav-menu { display: none; }
+      .hamburger { display: block; }
+      .audience-grid { grid-template-columns: 1fr 1fr; }
+      .collection-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .insta-grid { grid-template-columns: repeat(3, 1fr); }
+      .collection-layout { grid-template-columns: 1fr; }
+      .filter-sidebar { position: static; }
+      .product-detail-layout { grid-template-columns: 1fr; gap: 40px; }
+      .quick-view-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .audience-grid { grid-template-columns: 1fr; }
+      .collection-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .insta-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 2.8rem; }
+      .hero p { font-size: 1rem; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .hero-buttons .btn { width: 100%; max-width: 280px; text-align: center; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { width: 100%; }
+      .newsletter-form button { width: 100%; }
+      .section { padding: 50px 0; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .product-info { padding: 14px; }
+      .product-info h4 { font-size: 0.85rem; }
+      .add-to-cart-btn { font-size: 0.65rem; padding: 10px; }
+      .occasion-grid { grid-template-columns: repeat(2, 1fr); }
+      .collection-hero { height: 260px; }
+      .product-gallery-thumbs { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid { grid-template-columns: 1fr; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .insta-grid { grid-template-columns: repeat(2, 1fr); }
+      .preloader-logo { font-size: 2.5rem; }
+      .logo { font-size: 1.5rem; }
+      .collection-hero-content h1 { font-size: 1.8rem; }
+    }
+
+    /* ---------- UTILITY ---------- */
+    .text-center { text-align: center; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <!-- ========== PRELOADER ========== -->
+  <div id="preloader">
+    <div class="preloader-ring"></div>
+    <div class="preloader-logo">ZIVARA</div>
+    <div class="preloader-tagline">Elegance That Speaks.</div>
+  </div>
+
+  <!-- ========== ANNOUNCEMENT BAR ========== -->
+  <div class="announcement-bar">
+    Free Shipping on Orders Above Rs. 3,000 | Cash on Delivery Available
+  </div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo" onclick="showPage('home'); return false;">Z<span>I</span>VARA</a>
+
+      <ul class="nav-menu">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li>
+          <a onclick="showCollection('men')">Men</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div>
+                <h4>Shop By Category</h4>
+                <ul>
+                  <li><a onclick="showCollection('rings')">Rings</a></li>
+                  <li><a onclick="showCollection('bracelets')">Bracelets</a></li>
+                  <li><a onclick="showCollection('chains')">Chains</a></li>
+                  <li><a onclick="showCollection('pendants')">Pendants</a></li>
+                  <li><a onclick="showCollection('cufflinks')">Cufflinks</a></li>
+                  <li><a onclick="showCollection('brooches')">Brooches</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Shop By Occasion</h4>
+                <ul>
+                  <li><a onclick="showCollection('baraat')">Baraat</a></li>
+                  <li><a onclick="showCollection('mehndi')">Mehndi</a></li>
+                  <li><a onclick="showCollection('walima')">Walima</a></li>
+                  <li><a onclick="showCollection('nikah')">Nikah</a></li>
+                  <li><a onclick="showCollection('eid')">Eid</a></li>
+                  <li><a onclick="showCollection('party')">Party</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Shop By Style</h4>
+                <ul>
+                  <li><a onclick="showCollection('classic')">Classic</a></li>
+                  <li><a onclick="showCollection('minimal')">Minimal</a></li>
+                  <li><a onclick="showCollection('royal')">Royal</a></li>
+                  <li><a onclick="showCollection('modern')">Modern</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a onclick="showCollection('women')">Women</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div>
+                <h4>Shop By Category</h4>
+                <ul>
+                  <li><a onclick="showCollection('jewelry-sets')">Jewelry Sets</a></li>
+                  <li><a onclick="showCollection('necklaces')">Necklaces</a></li>
+                  <li><a onclick="showCollection('chokers')">Chokers</a></li>
+                  <li><a onclick="showCollection('earrings')">Earrings</a></li>
+                  <li><a onclick="showCollection('jhumkas')">Jhumkas</a></li>
+                  <li><a onclick="showCollection('rings')">Rings</a></li>
+                  <li><a onclick="showCollection('bangles')">Bangles</a></li>
+                  <li><a onclick="showCollection('bracelets')">Bracelets</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Shop By Occasion</h4>
+                <ul>
+                  <li><a onclick="showCollection('bridal')">Bridal</a></li>
+                  <li><a onclick="showCollection('baraat')">Baraat</a></li>
+                  <li><a onclick="showCollection('mehndi')">Mehndi</a></li>
+                  <li><a onclick="showCollection('walima')">Walima</a></li>
+                  <li><a onclick="showCollection('nikah')">Nikah</a></li>
+                  <li><a onclick="showCollection('eid')">Eid</a></li>
+                  <li><a onclick="showCollection('party')">Party</a></li>
+                  <li><a onclick="showCollection('get-together')">Get-Together</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4>Shop By Style</h4>
+                <ul>
+                  <li><a onclick="showCollection('traditional')">Traditional</a></li>
+                  <li><a onclick="showCollection('minimal')">Minimal</a></li>
+                  <li><a onclick="showCollection('statement')">Statement</a></li>
+                  <li><a onclick="showCollection('royal')">Royal</a></li>
+                  <li><a onclick="showCollection('pearl')">Pearl</a></li>
+                  <li><a onclick="showCollection('kundan')">Kundan</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a onclick="showCollection('best-sellers')">Best Sellers</a></li>
+        <li><a onclick="showCollection('new-arrivals')">New Arrivals</a></li>
+        <li><a onclick="showCollection('all-jewelry')">Jewelry</a></li>
+        <li><a onclick="showCollection('collections')">Collections</a></li>
+        <li><a onclick="showCollection('sale')">Sale</a></li>
+        <li><a onclick="showPage('home')">About</a></li>
+        <li><a onclick="showPage('home')">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button onclick="openSearch()" aria-label="Search"><i class="fas fa-search"></i></button>
+        <button onclick="openWishlist()" aria-label="Wishlist" style="position:relative;">
+          <i class="fas fa-heart"></i>
+          <span class="cart-count" id="wishlistCount" style="display:none;">0</span>
+        </button>
+        <button aria-label="Account"><i class="fas fa-user"></i></button>
+        <button onclick="openCart()" aria-label="Cart" style="position:relative;">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== MOBILE DRAWER ========== -->
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <span class="close-btn" id="closeDrawer"><i class="fas fa-times"></i></span>
+    <ul class="nav-links">
+      <li><a onclick="showPage('home'); closeMobileDrawer();">Home</a></li>
+      <li><a onclick="showCollection('men'); closeMobileDrawer();">Men</a></li>
+      <li><a onclick="showCollection('women'); closeMobileDrawer();">Women</a></li>
+      <li><a onclick="showCollection('best-sellers'); closeMobileDrawer();">Best Sellers</a></li>
+      <li><a onclick="showCollection('new-arrivals'); closeMobileDrawer();">New Arrivals</a></li>
+      <li><a onclick="showCollection('all-jewelry'); closeMobileDrawer();">Jewelry</a></li>
+      <li><a onclick="showCollection('collections'); closeMobileDrawer();">Collections</a></li>
+      <li><a onclick="showCollection('sale'); closeMobileDrawer();">Sale</a></li>
+      <li><a onclick="showPage('home'); closeMobileDrawer();">About</a></li>
+      <li><a onclick="showPage('home'); closeMobileDrawer();">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== CART DRAWER ========== -->
+  <div class="overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <span class="close-btn" onclick="closeCart()"><i class="fas fa-times"></i></span>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Your bag is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row"><span>Subtotal</span><span id="cartSubtotal">Rs. 0</span></div>
+      <div class="cart-total-row"><span>Shipping</span><span id="cartShipping">Free</span></div>
+      <div class="cart-total-row grand"><span>Total</span><span id="cartTotal">Rs. 0</span></div>
+      <button class="btn btn-solid" onclick="checkout()">Checkout</button>
+      <button class="btn" onclick="closeCart()" style="margin-top:8px;">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- ========== QUICK VIEW MODAL ========== -->
+  <div class="modal-overlay" id="quickViewModal" onclick="closeQuickView(event)">
+    <div class="quick-view-modal" onclick="event.stopPropagation()">
+      <button class="quick-view-close" onclick="closeQuickView()"><i class="fas fa-times"></i></button>
+      <div class="quick-view-layout" id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- ========== SEARCH MODAL ========== -->
+  <div class="search-modal" id="searchModal">
+    <button class="search-modal-close" onclick="closeSearch()"><i class="fas fa-times"></i></button>
+    <div class="container">
+      <h2>Search ZIVARA</h2>
+      <div class="search-input-wrapper">
+        <input type="text" id="searchInput" placeholder="Search for jewelry, occasions, styles..." oninput="performSearch()">
+        <i class="fas fa-search"></i>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- ========== HOME PAGE ========== -->
+  <div id="home" class="page-view active">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Elegance That Speaks.</h1>
+        <p>Jewelry designed to make every moment unforgettable.</p>
+        <div class="hero-buttons">
+          <a onclick="showCollection('women')" class="btn btn-solid" style="cursor:pointer;">Shop Women</a>
+          <a onclick="showCollection('men')" class="btn" style="cursor:pointer;">Shop Men</a>
+          <a onclick="showCollection('collections')" class="btn" style="cursor:pointer;">Explore Collections</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP BY AUDIENCE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Shop By Audience</h2>
+          <p>Curated jewelry for every story, every celebration.</p>
+        </div>
+        <div class="audience-grid">
+          <div class="audience-card" onclick="showCollection('women')">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80" alt="Women's jewelry collection" loading="lazy">
+            <div class="audience-overlay">
+              <h3>Women</h3>
+              <p>Discover elegant jewelry for weddings, celebrations and everyday moments.</p>
+              <span class="btn">Explore</span>
+            </div>
+          </div>
+          <div class="audience-card" onclick="showCollection('men')">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&q=80" alt="Men's jewelry collection" loading="lazy">
+            <div class="audience-overlay">
+              <h3>Men</h3>
+              <p>Explore refined jewelry and accessories designed for modern men.</p>
+              <span class="btn">Explore</span>
+            </div>
+          </div>
+          <div class="audience-card" onclick="showCollection('best-sellers')">
+            <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=800&q=80" alt="Best seller jewelry" loading="lazy">
+            <div class="audience-overlay">
+              <h3>Best Sellers</h3>
+              <p>Discover the pieces everyone is loving.</p>
+              <span class="btn">Explore</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP BY JEWELRY -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Shop By Jewelry</h2>
+          <p>Find your perfect piece by category.</p>
+        </div>
+        <div class="category-grid" id="homeCategoryGrid"></div>
+      </div>
+    </section>
+
+    <!-- SHOP BY OCCASION -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Shop By Occasion</h2>
+          <p>Jewelry for every memorable moment.</p>
+        </div>
+        <div class="occasion-grid" id="homeOccasionGrid"></div>
+      </div>
+    </section>
+
+    <!-- FEATURED COLLECTIONS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured ZIVARA Collections</h2>
+          <p>Curated edits for the modern muse.</p>
+        </div>
+        <div class="collection-grid">
+          <div class="collection-card" onclick="showCollection('bridal')">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80" alt="The Bridal Edit" loading="lazy">
+            <div class="overlay-text">
+              <h3>The Bridal Edit</h3>
+              <p>Statement jewelry for your most unforgettable day.</p>
+            </div>
+          </div>
+          <div class="collection-card" onclick="showCollection('mehndi')">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80" alt="The Mehndi Glow" loading="lazy">
+            <div class="overlay-text">
+              <h3>The Mehndi Glow</h3>
+              <p>Vibrant, festive pieces for the celebration of color.</p>
+            </div>
+          </div>
+          <div class="collection-card" onclick="showCollection('men')">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&q=80" alt="The Men's Edit" loading="lazy">
+            <div class="overlay-text">
+              <h3>The Men's Edit</h3>
+              <p>Refined accessories for the modern gentleman.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEST SELLERS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Best Sellers</h2>
+          <p>Discover the pieces everyone is loving.</p>
+        </div>
+        <div class="product-grid" id="homeBestSellers"></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-title">
+          <h2>What Our Customers Say</h2>
+          <p>Real reviews from real ZIVARA women and men.</p>
+        </div>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p>"The bridal set I ordered was absolutely stunning. It looked even better in person. I received so many compliments at my wedding!"</p>
+            <div class="author">Ayesha Khan</div>
+            <span class="verified"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p>"I bought the men's cufflinks and chain for my brother's wedding. The quality is exceptional for the price. Highly recommended."</p>
+            <div class="author">Bilal Ahmed</div>
+            <span class="verified"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+            <p>"ZIVARA has become my go-to for Eid and party jewelry. The designs are elegant and the prices are very reasonable."</p>
+            <div class="author">Fatima Noor</div>
+            <span class="verified"><i class="fas fa-check-circle"></i> Verified Purchase</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Follow The ZIVARA Glow</h2>
+          <p>@zivarajewelry</p>
+        </div>
+        <div class="insta-grid">
+          <div class="insta-item"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=80" alt="Instagram post" loading="lazy"></div>
+          <div class="insta-item"><img src="https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=400&q=80" alt="Instagram post" loading="lazy"></div>
+          <div class="insta-item"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&q=80" alt="Instagram post" loading="lazy"></div>
+          <div class="insta-item"><img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400&q=80" alt="Instagram post" loading="lazy"></div>
+          <div class="insta-item"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=400&q=80" alt="Instagram post" loading="lazy"></div>
+          <div class="insta-item"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80" alt="Instagram post" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div class="container">
+        <h2>Join The ZIVARA Circle</h2>
+        <p>Be the first to know about new collections, exclusive offers and styling tips.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== COLLECTION PAGE ========== -->
+  <div id="collectionPage" class="page-view">
+    <div class="collection-hero" id="collectionHero">
+      <div class="collection-hero-content">
+        <h1 id="collectionTitle">Collection</h1>
+        <p id="collectionSubtitle">Discover our curated selection.</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="breadcrumbs" id="breadcrumbs"></div>
+      <div class="collection-layout">
+        <aside class="filter-sidebar">
+          <h3>Filters</h3>
+          <div class="filter-group">
+            <h5>Category</h5>
+            <div id="filterCategories"></div>
+          </div>
+          <div class="filter-group">
+            <h5>Occasion</h5>
+            <div id="filterOccasions"></div>
+          </div>
+          <div class="filter-group">
+            <h5>Style</h5>
+            <div id="filterStyles"></div>
+          </div>
+          <div class="filter-group">
+            <h5>Price Range</h5>
+            <div class="price-range">
+              <input type="number" id="minPrice" placeholder="Min" oninput="applyFilters()">
+              <span>-</span>
+              <input type="number" id="maxPrice" placeholder="Max" oninput="applyFilters()">
+            </div>
+          </div>
+          <div class="filter-group">
+            <h5>Gender</h5>
+            <div id="filterGender"></div>
+          </div>
+          <button class="clear-filters" onclick="clearFilters()">Clear All Filters</button>
+        </aside>
+        <main>
+          <div class="collection-toolbar">
+            <div class="product-count" id="productCount">0 products</div>
+            <select class="sort-select" id="sortSelect" onchange="applySort()">
+              <option value="featured">Featured</option>
+              <option value="best-selling">Best Selling</option>
+              <option value="newest">Newest</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="discount">Biggest Discount</option>
+            </select>
+          </div>
+          <div class="product-grid" id="collectionProducts"></div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== PRODUCT DETAIL PAGE ========== -->
+  <div id="productPage" class="page-view">
+    <div class="container">
+      <div class="breadcrumbs" id="productBreadcrumbs"></div>
+      <div class="product-detail-layout" id="productDetail"></div>
+      <div id="relatedProducts"></div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo">ZIVARA</div>
+          <div class="tagline">"Elegance That Speaks."</div>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a onclick="showCollection('women')">Women</a></li>
+            <li><a onclick="showCollection('men')">Men</a></li>
+            <li><a onclick="showCollection('best-sellers')">Best Sellers</a></li>
+            <li><a onclick="showCollection('new-arrivals')">New Arrivals</a></li>
+            <li><a onclick="showCollection('sale')">Sale</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Jewelry</h4>
+          <ul>
+            <li><a onclick="showCollection('necklaces')">Necklaces</a></li>
+            <li><a onclick="showCollection('earrings')">Earrings</a></li>
+            <li><a onclick="showCollection('rings')">Rings</a></li>
+            <li><a onclick="showCollection('bracelets')">Bracelets</a></li>
+            <li><a onclick="showCollection('bangles')">Bangles</a></li>
+            <li><a onclick="showCollection('jewelry-sets')">Jewelry Sets</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Occasions</h4>
+          <ul>
+            <li><a onclick="showCollection('bridal')">Bridal</a></li>
+            <li><a onclick="showCollection('baraat')">Baraat</a></li>
+            <li><a onclick="showCollection('mehndi')">Mehndi</a></li>
+            <li><a onclick="showCollection('walima')">Walima</a></li>
+            <li><a onclick="showCollection('nikah')">Nikah</a></li>
+            <li><a onclick="showCollection('eid')">Eid</a></li>
+            <li><a onclick="showCollection('party')">Party</a></li>
+            <li><a onclick="showCollection('get-together')">Get-Together</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Customer Care</h4>
+          <ul>
+            <li><a onclick="showPage('home')">Contact</a></li>
+            <li><a onclick="showPage('home')">Shipping</a></li>
+            <li><a onclick="showPage('home')">Returns</a></li>
+            <li><a onclick="showPage('home')">FAQs</a></li>
+            <li><a onclick="showPage('home')">Privacy Policy</a></li>
+            <li><a onclick="showPage('home')">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 ZIVARA. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // ============================================================
+    // CENTRALIZED PRODUCT DATABASE
+    // ============================================================
+    // EDIT PRODUCTS HERE - All products are stored in this array
+    // To add a new product, copy an existing object and modify it.
+    // ============================================================
+
+    const PRODUCTS = [
+      // ---------- JEWELRY SETS ----------
+      {
+        id: 1,
+        name: "Royal Pearl Bridal Set",
+        description: "Elegant pearl and crystal bridal jewelry set designed for wedding occasions. Includes necklace, earrings, and tikka.",
+        category: "Jewelry Sets",
+        subcategory: "Bridal Sets",
+        gender: "Women",
+        occasion: ["Bridal", "Baraat", "Walima"],
+        style: ["Royal", "Pearl"],
+        price: 5999,
+        salePrice: 4499,
+        discount: 25,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80"],
+        rating: 4.8,
+        reviews: 24,
+        stock: 10,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 2,
+        name: "Regal Kundan Bridal Set",
+        description: "Traditional kundan bridal set with intricate gold-tone detailing. Perfect for the modern bride.",
+        category: "Jewelry Sets",
+        subcategory: "Bridal Sets",
+        gender: "Women",
+        occasion: ["Bridal", "Baraat"],
+        style: ["Royal", "Kundan", "Traditional"],
+        price: 7499,
+        salePrice: 5499,
+        discount: 27,
+        image: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80"],
+        rating: 4.9,
+        reviews: 98,
+        stock: 8,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 3,
+        name: "Pearl Majesty Bridal Set",
+        description: "Sophisticated pearl bridal set with champagne gold accents. Ideal for Walima and Nikah.",
+        category: "Jewelry Sets",
+        subcategory: "Bridal Sets",
+        gender: "Women",
+        occasion: ["Walima", "Nikah", "Bridal"],
+        style: ["Pearl", "Minimal", "Royal"],
+        price: 4999,
+        salePrice: 3999,
+        discount: 20,
+        image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80"],
+        rating: 4.7,
+        reviews: 76,
+        stock: 12,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 4,
+        name: "Golden Palace Bridal Set",
+        description: "Opulent gold-tone bridal set with statement necklace and matching earrings.",
+        category: "Jewelry Sets",
+        subcategory: "Bridal Sets",
+        gender: "Women",
+        occasion: ["Bridal", "Baraat", "Party"],
+        style: ["Royal", "Statement"],
+        price: 8999,
+        salePrice: 6499,
+        discount: 28,
+        image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"],
+        rating: 4.9,
+        reviews: 112,
+        stock: 6,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 5,
+        name: "Crystal Royale Bridal Set",
+        description: "Sparkling crystal bridal set for the glamorous bride. Includes necklace, earrings, and maang tikka.",
+        category: "Jewelry Sets",
+        subcategory: "Bridal Sets",
+        gender: "Women",
+        occasion: ["Bridal", "Walima", "Party"],
+        style: ["Crystal", "Statement", "Royal"],
+        price: 6999,
+        salePrice: 4999,
+        discount: 29,
+        image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80"],
+        rating: 4.8,
+        reviews: 64,
+        stock: 9,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      {
+        id: 6,
+        name: "Mehndi Glow Set",
+        description: "Vibrant and colorful jewelry set perfect for Mehndi celebrations. Includes earrings, necklace, and bangles.",
+        category: "Jewelry Sets",
+        subcategory: "Mehndi Sets",
+        gender: "Women",
+        occasion: ["Mehndi", "Party", "Get-Together"],
+        style: ["Traditional", "Statement"],
+        price: 3499,
+        salePrice: 2499,
+        discount: 29,
+        image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80"],
+        rating: 4.6,
+        reviews: 45,
+        stock: 15,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      // ---------- NECKLACES ----------
+      {
+        id: 7,
+        name: "Royal Kundan Necklace",
+        description: "Statement kundan necklace with intricate gold-tone detailing. Perfect for weddings and formal events.",
+        category: "Necklaces",
+        subcategory: "Bridal Necklaces",
+        gender: "Women",
+        occasion: ["Bridal", "Baraat", "Walima"],
+        style: ["Royal", "Kundan", "Traditional"],
+        price: 4999,
+        salePrice: 3499,
+        discount: 30,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80"],
+        rating: 4.8,
+        reviews: 56,
+        stock: 12,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 8,
+        name: "Pearl Elegance Necklace",
+        description: "Delicate pearl necklace with champagne gold clasp. Ideal for Nikah and Walima.",
+        category: "Necklaces",
+        subcategory: "Pearl Necklaces",
+        gender: "Women",
+        occasion: ["Nikah", "Walima", "Get-Together"],
+        style: ["Pearl", "Minimal"],
+        price: 2999,
+        salePrice: 2199,
+        discount: 27,
+        image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80"],
+        rating: 4.7,
+        reviews: 42,
+        stock: 18,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 9,
+        name: "Crystal Statement Necklace",
+        description: "Glamorous crystal necklace for parties and formal events.",
+        category: "Necklaces",
+        subcategory: "Statement Necklaces",
+        gender: "Women",
+        occasion: ["Party", "Formal", "Walima"],
+        style: ["Crystal", "Statement", "Modern"],
+        price: 3999,
+        salePrice: 2999,
+        discount: 25,
+        image: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80"],
+        rating: 4.6,
+        reviews: 38,
+        stock: 14,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      {
+        id: 10,
+        name: "Minimal Gold Chain Necklace",
+        description: "Simple and elegant gold-tone chain necklace for everyday wear.",
+        category: "Necklaces",
+        subcategory: "Minimal Necklaces",
+        gender: "Women",
+        occasion: ["Daily Wear", "Office", "Get-Together"],
+        style: ["Minimal", "Modern"],
+        price: 1499,
+        salePrice: 999,
+        discount: 33,
+        image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"],
+        rating: 4.5,
+        reviews: 28,
+        stock: 25,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      // ---------- CHOKERS ----------
+      {
+        id: 11,
+        name: "Royal Choker Set",
+        description: "Elegant choker with matching earrings. Perfect for bridal and formal occasions.",
+        category: "Chokers",
+        subcategory: "Bridal Chokers",
+        gender: "Women",
+        occasion: ["Bridal", "Baraat", "Party"],
+        style: ["Royal", "Kundan"],
+        price: 3499,
+        salePrice: 2499,
+        discount: 29,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80"],
+        rating: 4.7,
+        reviews: 34,
+        stock: 10,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      {
+        id: 12,
+        name: "Pearl Choker Necklace",
+        description: "Sophisticated pearl choker for elegant evenings and formal events.",
+        category: "Chokers",
+        subcategory: "Pearl Chokers",
+        gender: "Women",
+        occasion: ["Walima", "Party", "Formal"],
+        style: ["Pearl", "Minimal"],
+        price: 2799,
+        salePrice: 1999,
+        discount: 29,
+        image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80"],
+        rating: 4.6,
+        reviews: 26,
+        stock: 15,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      // ---------- EARRINGS ----------
+      {
+        id: 13,
+        name: "Crystal Drop Earrings",
+        description: "Sparkling crystal drop earrings for parties and formal events.",
+        category: "Earrings",
+        subcategory: "Drop Earrings",
+        gender: "Women",
+        occasion: ["Party", "Formal", "Walima"],
+        style: ["Crystal", "Statement"],
+        price: 1999,
+        salePrice: 1399,
+        discount: 30,
+        image: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80"],
+        rating: 4.8,
+        reviews: 52,
+        stock: 20,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 14,
+        name: "Pearl Stud Earrings",
+        description: "Classic pearl stud earrings for everyday elegance.",
+        category: "Earrings",
+        subcategory: "Stud Earrings",
+        gender: "Women",
+        occasion: ["Daily Wear", "Office", "Get-Together"],
+        style: ["Pearl", "Minimal"],
+        price: 899,
+        salePrice: 649,
+        discount: 28,
+        image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80"],
+        rating: 4.7,
+        reviews: 45,
+        stock: 30,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 15,
+        name: "Gold Hoop Earrings",
+        description: "Classic gold-tone hoop earrings for a timeless look.",
+        category: "Earrings",
+        subcategory: "Hoops",
+        gender: "Women",
+        occasion: ["Daily Wear", "Office", "Party"],
+        style: ["Minimal", "Modern", "Classic"],
+        price: 1299,
+        salePrice: 899,
+        discount: 31,
+        image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"],
+        rating: 4.6,
+        reviews: 38,
+        stock: 22,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 16,
+        name: "Kundan Statement Earrings",
+        description: "Bold kundan earrings for weddings and festive occasions.",
+        category: "Earrings",
+        subcategory: "Statement Earrings",
+        gender: "Women",
+        occasion: ["Bridal", "Mehndi", "Party"],
+        style: ["Kundan", "Statement", "Traditional"],
+        price: 2499,
+        salePrice: 1799,
+        discount: 28,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80"],
+        rating: 4.8,
+        reviews: 41,
+        stock: 16,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      // ---------- JHUMKAS ----------
+      {
+        id: 17,
+        name: "Traditional Gold Jhumka",
+        description: "Classic gold-tone jhumka with pearl drops. A timeless choice for festive occasions.",
+        category: "Jhumkas",
+        subcategory: "Traditional Jhumkas",
+        gender: "Women",
+        occasion: ["Mehndi", "Bridal", "Eid"],
+        style: ["Traditional", "Royal"],
+        price: 1899,
+        salePrice: 1399,
+        discount: 26,
+        image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80"],
+        rating: 4.8,
+        reviews: 67,
+        stock: 18,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 18,
+        name: "Colorful Meenakari Jhumka",
+        description: "Vibrant meenakari jhumka for Mehndi and festive celebrations.",
+        category: "Jhumkas",
+        subcategory: "Meenakari Jhumkas",
+        gender: "Women",
+        occasion: ["Mehndi", "Party", "Eid"],
+        style: ["Traditional", "Statement"],
+        price: 2199,
+        salePrice: 1599,
+        discount: 27,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80"],
+        rating: 4.7,
+        reviews: 53,
+        stock: 14,
+        isBestSeller: true,
+        isNew: true,
+        isSale: true
+      },
+      {
+        id: 19,
+        name: "Pearl Drop Jhumka",
+        description: "Elegant pearl jhumka for Walima and formal events.",
+        category: "Jhumkas",
+        subcategory: "Pearl Jhumkas",
+        gender: "Women",
+        occasion: ["Walima", "Nikah", "Party"],
+        style: ["Pearl", "Minimal", "Royal"],
+        price: 2499,
+        salePrice: 1799,
+        discount: 28,
+        image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80"],
+        rating: 4.6,
+        reviews: 32,
+        stock: 12,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      // ---------- RINGS ----------
+      {
+        id: 20,
+        name: "Crystal Statement Ring",
+        description: "Bold crystal statement ring for parties and special occasions.",
+        category: "Rings",
+        subcategory: "Statement Rings",
+        gender: "Women",
+        occasion: ["Party", "Formal", "Get-Together"],
+        style: ["Crystal", "Statement", "Modern"],
+        price: 1499,
+        salePrice: 999,
+        discount: 33,
+        image: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80"],
+        rating: 4.7,
+        reviews: 44,
+        stock: 25,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 21,
+        name: "Gold Tone Minimal Ring",
+        description: "Simple gold-tone ring for everyday elegance.",
+        category: "Rings",
+        subcategory: "Minimal Rings",
+        gender: "Women",
+        occasion: ["Daily Wear", "Office", "Get-Together"],
+        style: ["Minimal", "Modern"],
+        price: 699,
+        salePrice: 499,
+        discount: 29,
+        image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"],
+        rating: 4.5,
+        reviews: 36,
+        stock: 35,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 22,
+        name: "Pearl Accent Ring",
+        description: "Delicate pearl accent ring for a sophisticated look.",
+        category: "Rings",
+        subcategory: "Pearl Rings",
+        gender: "Women",
+        occasion: ["Nikah", "Walima", "Daily Wear"],
+        style: ["Pearl", "Minimal"],
+        price: 1199,
+        salePrice: 849,
+        discount: 29,
+        image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80"],
+        rating: 4.6,
+        reviews: 29,
+        stock: 20,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      {
+        id: 23,
+        name: "Men's Classic Ring",
+        description: "Sleek and modern ring for men. Perfect for formal and everyday wear.",
+        category: "Rings",
+        subcategory: "Men's Rings",
+        gender: "Men",
+        occasion: ["Formal", "Office", "Daily Wear", "Wedding Guest"],
+        style: ["Classic", "Minimal", "Modern"],
+        price: 1499,
+        salePrice: 1099,
+        discount: 27,
+        image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"],
+        rating: 4.7,
+        reviews: 31,
+        stock: 18,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      // ---------- BANGLES ----------
+      {
+        id: 24,
+        name: "Gold Tone Bangle Set",
+        description: "Set of 4 gold-tone bangles with intricate detailing. Perfect for weddings and festivals.",
+        category: "Bangles",
+        subcategory: "Bridal Bangles",
+        gender: "Women",
+        occasion: ["Bridal", "Mehndi", "Eid"],
+        style: ["Traditional", "Royal"],
+        price: 2999,
+        salePrice: 1999,
+        discount: 33,
+        image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80"],
+        rating: 4.8,
+        reviews: 58,
+        stock: 15,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 25,
+        name: "Pearl Bangle Set",
+        description: "Elegant pearl bangle set for formal and festive occasions.",
+        category: "Bangles",
+        subcategory: "Pearl Bangles",
+        gender: "Women",
+        occasion: ["Walima", "Nikah", "Party"],
+        style: ["Pearl", "Minimal"],
+        price: 2499,
+        salePrice: 1799,
+        discount: 28,
+        image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80"],
+        rating: 4.6,
+        reviews: 34,
+        stock: 18,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      // ---------- BRACELETS ----------
+      {
+        id: 26,
+        name: "Crystal Tennis Bracelet",
+        description: "Sparkling crystal tennis bracelet for glamorous evenings.",
+        category: "Bracelets",
+        subcategory: "Crystal Bracelets",
+        gender: "Women",
+        occasion: ["Party", "Formal", "Walima"],
+        style: ["Crystal", "Statement", "Modern"],
+        price: 2499,
+        salePrice: 1799,
+        discount: 28,
+        image: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80"],
+        rating: 4.8,
+        reviews: 47,
+        stock: 16,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 27,
+        name: "Men's Leather Bracelet",
+        description: "Rugged leather and metal bracelet for modern men.",
+        category: "Bracelets",
+        subcategory: "Men's Bracelets",
+        gender: "Men",
+        occasion: ["Daily Wear", "Casual", "Get-Together"],
+        style: ["Modern", "Minimal", "Classic"],
+        price: 1899,
+        salePrice: 1399,
+        discount: 26,
+        image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"],
+        rating: 4.7,
+        reviews: 39,
+        stock: 22,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      {
+        id: 28,
+        name: "Gold Chain Bracelet",
+        description: "Classic gold-tone chain bracelet for everyday elegance.",
+        category: "Bracelets",
+        subcategory: "Chain Bracelets",
+        gender: "Women",
+        occasion: ["Daily Wear", "Office", "Get-Together"],
+        style: ["Minimal", "Classic"],
+        price: 1299,
+        salePrice: 899,
+        discount: 31,
+        image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80"],
+        rating: 4.5,
+        reviews: 33,
+        stock: 28,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      // ---------- KADA ----------
+      {
+        id: 29,
+        name: "Royal Gold Kada",
+        description: "Statement gold-tone kada for weddings and festive occasions.",
+        category: "Kada",
+        subcategory: "Bridal Kada",
+        gender: "Women",
+        occasion: ["Bridal", "Baraat", "Mehndi"],
+        style: ["Royal", "Traditional", "Statement"],
+        price: 3499,
+        salePrice: 2499,
+        discount: 29,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80"],
+        rating: 4.8,
+        reviews: 41,
+        stock: 12,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      {
+        id: 30,
+        name: "Men's Steel Kada",
+        description: "Bold steel kada for the modern man. Perfect for formal and casual wear.",
+        category: "Kada",
+        subcategory: "Men's Kada",
+        gender: "Men",
+        occasion: ["Formal", "Party", "Daily Wear"],
+        style: ["Modern", "Statement", "Classic"],
+        price: 2999,
+        salePrice: 2199,
+        discount: 27,
+        image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"],
+        rating: 4.7,
+        reviews: 28,
+        stock: 14,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      // ---------- PENDANTS ----------
+      {
+        id: 31,
+        name: "Crystal Heart Pendant",
+        description: "Romantic crystal heart pendant on a delicate chain.",
+        category: "Pendants",
+        subcategory: "Crystal Pendants",
+        gender: "Women",
+        occasion: ["Get-Together", "Daily Wear", "Party"],
+        style: ["Crystal", "Minimal", "Modern"],
+        price: 1499,
+        salePrice: 999,
+        discount: 33,
+        image: "https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80"],
+        rating: 4.6,
+        reviews: 35,
+        stock: 24,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      {
+        id: 32,
+        name: "Men's Cross Pendant",
+        description: "Classic cross pendant for men on a sturdy chain.",
+        category: "Pendants",
+        subcategory: "Men's Pendants",
+        gender: "Men",
+        occasion: ["Daily Wear", "Formal", "Get-Together"],
+        style: ["Classic", "Minimal", "Modern"],
+        price: 1899,
+        salePrice: 1399,
+        discount: 26,
+        image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"],
+        rating: 4.7,
+        reviews: 26,
+        stock: 18,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      // ---------- TIKKA ----------
+      {
+        id: 33,
+        name: "Bridal Gold Tikka",
+        description: "Traditional gold-tone tikka for bridal and festive occasions.",
+        category: "Tikka",
+        subcategory: "Bridal Tikka",
+        gender: "Women",
+        occasion: ["Bridal", "Baraat", "Mehndi"],
+        style: ["Royal", "Traditional", "Kundan"],
+        price: 1999,
+        salePrice: 1399,
+        discount: 30,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80"],
+        rating: 4.8,
+        reviews: 49,
+        stock: 16,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 34,
+        name: "Pearl Maang Tikka",
+        description: "Elegant pearl maang tikka for Walima and Nikah.",
+        category: "Maang Tikka",
+        subcategory: "Pearl Maang Tikka",
+        gender: "Women",
+        occasion: ["Walima", "Nikah", "Bridal"],
+        style: ["Pearl", "Minimal", "Royal"],
+        price: 2299,
+        salePrice: 1699,
+        discount: 26,
+        image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80"],
+        rating: 4.7,
+        reviews: 31,
+        stock: 12,
+        isBestSeller: false,
+        isNew: false,
+        isSale: true
+      },
+      // ---------- MATHA PATTI ----------
+      {
+        id: 35,
+        name: "Royal Matha Patti",
+        description: "Statement matha patti for the grandest bridal looks.",
+        category: "Matha Patti",
+        subcategory: "Bridal Matha Patti",
+        gender: "Women",
+        occasion: ["Bridal", "Baraat"],
+        style: ["Royal", "Kundan", "Statement"],
+        price: 3499,
+        salePrice: 2499,
+        discount: 29,
+        image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80"],
+        rating: 4.9,
+        reviews: 37,
+        stock: 8,
+        isBestSeller: true,
+        isNew: true,
+        isSale: true
+      },
+      // ---------- NATH ----------
+      {
+        id: 36,
+        name: "Bridal Gold Nath",
+        description: "Traditional gold-tone nath for bridal occasions.",
+        category: "Nath",
+        subcategory: "Bridal Nath",
+        gender: "Women",
+        occasion: ["Bridal", "Baraat", "Nikah"],
+        style: ["Royal", "Traditional"],
+        price: 1799,
+        salePrice: 1299,
+        discount: 28,
+        image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80"],
+        rating: 4.6,
+        reviews: 22,
+        stock: 10,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      // ---------- MEN'S ITEMS ----------
+      {
+        id: 37,
+        name: "Men's Gold Chain",
+        description: "Classic gold-tone chain for men. Perfect for formal and everyday wear.",
+        category: "Chains",
+        subcategory: "Men's Chains",
+        gender: "Men",
+        occasion: ["Daily Wear", "Formal", "Wedding Guest"],
+        style: ["Classic", "Minimal"],
+        price: 2499,
+        salePrice: 1799,
+        discount: 28,
+        image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"],
+        rating: 4.7,
+        reviews: 43,
+        stock: 20,
+        isBestSeller: true,
+        isNew: false,
+        isSale: true
+      },
+      {
+        id: 38,
+        name: "Men's Cufflinks Set",
+        description: "Elegant cufflinks for formal occasions and weddings.",
+        category: "Cufflinks",
+        subcategory: "Wedding Cufflinks",
+        gender: "Men",
+        occasion: ["Formal", "Wedding Guest", "Baraat"],
+        style: ["Classic", "Modern", "Royal"],
+        price: 1999,
+        salePrice: 1499,
+        discount: 25,
+        image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"],
+        rating: 4.8,
+        reviews: 29,
+        stock: 15,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      },
+      {
+        id: 39,
+        name: "Men's Brooch",
+        description: "Sophisticated brooch for formal events and weddings.",
+        category: "Brooches",
+        subcategory: "Wedding Brooches",
+        gender: "Men",
+        occasion: ["Formal", "Wedding Guest", "Party"],
+        style: ["Classic", "Royal", "Statement"],
+        price: 2299,
+        salePrice: 1699,
+        discount: 26,
+        image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80",
+        gallery: ["https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80"],
+        rating: 4.6,
+        reviews: 18,
+        stock: 12,
+        isBestSeller: false,
+        isNew: true,
+        isSale: true
+      }
+    ];
+
+    // ============================================================
+    // COLLECTION CONFIGURATIONS
+    // ============================================================
+    const COLLECTIONS = {
+      'women': { title: "Women's Jewelry", subtitle: "Elegant pieces for every occasion.", filter: p => p.gender === 'Women' },
+      'men': { title: "Men's Jewelry", subtitle: "Refined accessories for the modern gentleman.", filter: p => p.gender === 'Men' },
+      'best-sellers': { title: "Best Sellers", subtitle: "Discover the pieces everyone is loving.", filter: p => p.isBestSeller },
+      'new-arrivals': { title: "New Arrivals", subtitle: "The latest additions to our collection.", filter: p => p.isNew },
+      'sale': { title: "Sale", subtitle: "Exceptional pieces at exceptional prices.", filter: p => p.isSale },
+      'all-jewelry': { title: "All Jewelry", subtitle: "Browse our complete collection.", filter: p => true },
+      'collections': { title: "ZIVARA Collections", subtitle: "Curated edits for the modern muse.", filter: p => true },
+
+      // Categories
+      'jewelry-sets': { title: "Jewelry Sets", subtitle: "Complete sets for a coordinated look.", filter: p => p.category === 'Jewelry Sets' },
+      'necklaces': { title: "Necklaces", subtitle: "Designed to shine.", filter: p => p.category === 'Necklaces' },
+      'chokers': { title: "Chokers", subtitle: "Statement pieces for your neckline.", filter: p => p.category === 'Chokers' },
+      'earrings': { title: "Earrings", subtitle: "Frame your beauty.", filter: p => p.category === 'Earrings' },
+      'jhumkas': { title: "Jhumkas", subtitle: "Traditional elegance for every celebration.", filter: p => p.category === 'Jhumkas' },
+      'studs': { title: "Stud Earrings", subtitle: "Classic and minimal.", filter: p => p.subcategory && p.subcategory.includes('Stud') },
+      'hoops': { title: "Hoops", subtitle: "Timeless circles of style.", filter: p => p.subcategory && p.subcategory.includes('Hoop') },
+      'rings': { title: "Rings", subtitle: "Find your signature ring.", filter: p => p.category === 'Rings' },
+      'bangles': { title: "Bangles", subtitle: "Traditional and modern bangles.", filter: p => p.category === 'Bangles' },
+      'bracelets': { title: "Bracelets", subtitle: "Elegant wristwear for every occasion.", filter: p => p.category === 'Bracelets' },
+      'kada': { title: "Kada", subtitle: "Statement wristwear.", filter: p => p.category === 'Kada' },
+      'pendants': { title: "Pendants", subtitle: "Delicate and meaningful.", filter: p => p.category === 'Pendants' },
+      'tikka': { title: "Tikka", subtitle: "Traditional head jewelry.", filter: p => p.category === 'Tikka' },
+      'maang-tikka': { title: "Maang Tikka", subtitle: "Elegant headpieces.", filter: p => p.category === 'Maang Tikka' },
+      'matha-patti': { title: "Matha Patti", subtitle: "Statement bridal headwear.", filter: p => p.category === 'Matha Patti' },
+      'nath': { title: "Nath", subtitle: "Traditional nose jewelry.", filter: p => p.category === 'Nath' },
+      'chains': { title: "Chains", subtitle: "Classic chains for men.", filter: p => p.category === 'Chains' },
+      'cufflinks': { title: "Cufflinks", subtitle: "Refined accessories for formal wear.", filter: p => p.category === 'Cufflinks' },
+      'brooches': { title: "Brooches", subtitle: "Sophisticated pins and brooches.", filter: p => p.category === 'Brooches' },
+
+      // Occasions
+      'bridal': { title: "Bridal Jewelry", subtitle: "Statement pieces designed to make your most unforgettable moments shine.", filter: p => p.occasion.includes('Bridal') },
+      'baraat': { title: "Baraat Collection", subtitle: "Jewelry for your grandest moments.", filter: p => p.occasion.includes('Baraat') },
+      'mehndi': { title: "Mehndi Collection", subtitle: "Celebrate in color.", filter: p => p.occasion.includes('Mehndi') },
+      'walima': { title: "Walima Collection", subtitle: "Elegant after-glow.", filter: p => p.occasion.includes('Walima') },
+      'nikah': { title: "Nikah Collection", subtitle: "Timeless elegance for your Nikah.", filter: p => p.occasion.includes('Nikah') },
+      'eid': { title: "Eid Collection", subtitle: "Celebrate every moment.", filter: p => p.occasion.includes('Eid') },
+      'party': { title: "Party Jewelry", subtitle: "Make a statement.", filter: p => p.occasion.includes('Party') },
+      'get-together': { title: "Get-Together Collection", subtitle: "Effortless elegance.", filter: p => p.occasion.includes('Get-Together') },
+
+      // Styles
+      'traditional': { title: "Traditional Jewelry", subtitle: "Timeless designs rooted in heritage.", filter: p => p.style.includes('Traditional') },
+      'minimal': { title: "Minimal Jewelry", subtitle: "Understated elegance.", filter: p => p.style.includes('Minimal') },
+      'statement': { title: "Statement Jewelry", subtitle: "Bold pieces that speak volumes.", filter: p => p.style.includes('Statement') },
+      'royal': { title: "Royal Collection", subtitle: "Regal designs for grand occasions.", filter: p => p.style.includes('Royal') },
+      'pearl': { title: "Pearl Collection", subtitle: "Classic pearl elegance.", filter: p => p.style.includes('Pearl') },
+      'kundan': { title: "Kundan Collection", subtitle: "Traditional kundan craftsmanship.", filter: p => p.style.includes('Kundan') },
+      'classic': { title: "Classic Collection", subtitle: "Timeless pieces for every wardrobe.", filter: p => p.style.includes('Classic') },
+      'modern': { title: "Modern Collection", subtitle: "Contemporary designs for today.", filter: p => p.style.includes('Modern') },
+    };
+
+    // ============================================================
+    // STATE
+    // ============================================================
+    let currentCollection = 'all-jewelry';
+    let currentFilters = {
+      category: [],
+      occasion: [],
+      style: [],
+      gender: [],
+      minPrice: null,
+      maxPrice: null
+    };
+    let currentSort = 'featured';
+    let cart = [];
+    let wishlist = [];
+    let recentlyViewed = [];
+
+    // ============================================================
+    // HELPERS
+    // ============================================================
+    function formatPrice(price) {
+      return 'Rs. ' + price.toLocaleString('en-PK');
+    }
+
+    function getStars(rating) {
+      let stars = '';
+      for (let i = 1; i <= 5; i++) {
+        if (i <= Math.floor(rating)) stars += '<i class="fas fa-star"></i>';
+        else if (i - 0.5 <= rating) stars += '<i class="fas fa-star-half-alt"></i>';
+        else stars += '<i class="far fa-star"></i>';
+      }
+      return stars;
+    }
+
+    function slugify(str) {
+      return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    }
+
+    // ============================================================
+    // PAGE NAVIGATION
+    // ============================================================
+    function showPage(pageId) {
+      document.querySelectorAll('.page-view').forEach(p => p.classList.remove('active'));
+      const page = document.getElementById(pageId);
+      if (page) page.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showCollection(collectionKey) {
+      currentCollection = collectionKey;
+      const config = COLLECTIONS[collectionKey] || COLLECTIONS['all-jewelry'];
+
+      document.getElementById('collectionTitle').textContent = config.title;
+      document.getElementById('collectionSubtitle').textContent = config.subtitle;
+
+      // Set hero background
+      const heroBg = document.getElementById('collectionHero');
+      const bgImage = getCollectionBg(collectionKey);
+      heroBg.style.setProperty('--bg-image', `url('${bgImage}')`);
+      heroBg.querySelector('::before');
+
+      // Build breadcrumbs
+      const breadcrumbs = document.getElementById('breadcrumbs');
+      breadcrumbs.innerHTML = `<a onclick="showPage('home')">Home</a> <span>/</span> <span style="color:var(--charcoal);">${config.title}</span>`;
+
+      // Reset filters
+      clearFilters(false);
+
+      // Build filter options
+      buildFilterOptions();
+
+      // Render products
+      renderCollection();
+
+      showPage('collectionPage');
+    }
+
+    function getCollectionBg(key) {
+      const bgs = {
+        'bridal': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1600&q=80',
+        'baraat': 'https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=1600&q=80',
+        'mehndi': 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1600&q=80',
+        'walima': 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1600&q=80',
+        'nikah': 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1600&q=80',
+        'eid': 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1600&q=80',
+        'party': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1600&q=80',
+        'get-together': 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1600&q=80',
+        'jewelry-sets': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1600&q=80',
+        'necklaces': 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=1600&q=80',
+        'earrings': 'https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=1600&q=80',
+        'jhumkas': 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1600&q=80',
+        'rings': 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1600&q=80',
+        'bangles': 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1600&q=80',
+        'bracelets': 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1600&q=80',
+        'men': 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=1600&q=80',
+        'women': 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=1600&q=80',
+      };
+      return bgs[key] || 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1600&q=80';
+    }
+
+    // ============================================================
+    // FILTERS & SORTING
+    // ============================================================
+    function buildFilterOptions() {
+      const config = COLLECTIONS[currentCollection] || COLLECTIONS['all-jewelry'];
+      const products = PRODUCTS.filter(config.filter);
+
+      // Categories
+      const categories = [...new Set(products.map(p => p.category))].sort();
+      document.getElementById('filterCategories').innerHTML = categories.map(c =>
+        `<label><input type="checkbox" value="${c}" onchange="toggleFilter('category', '${c}')"> ${c}</label>`
+      ).join('');
+
+      // Occasions
+      const occasions = [...new Set(products.flatMap(p => p.occasion))].sort();
+      document.getElementById('filterOccasions').innerHTML = occasions.map(o =>
+        `<label><input type="checkbox" value="${o}" onchange="toggleFilter('occasion', '${o}')"> ${o}</label>`
+      ).join('');
+
+      // Styles
+      const styles = [...new Set(products.flatMap(p => p.style))].sort();
+      document.getElementById('filterStyles').innerHTML = styles.map(s =>
+        `<label><input type="checkbox" value="${s}" onchange="toggleFilter('style', '${s}')"> ${s}</label>`
+      ).join('');
+
+      // Gender
+      const genders = [...new Set(products.map(p => p.gender))].sort();
+      document.getElementById('filterGender').innerHTML = genders.map(g =>
+        `<label><input type="checkbox" value="${g}" onchange="toggleFilter('gender', '${g}')"> ${g}</label>`
+      ).join('');
+    }
+
+    function toggleFilter(type, value) {
+      const arr = currentFilters[type];
+      const idx = arr.indexOf(value);
+      if (idx > -1) arr.splice(idx, 1);
+      else arr.push(value);
+      renderCollection();
+    }
+
+    function applyFilters() {
+      currentFilters.minPrice = document.getElementById('minPrice').value ? parseInt(document.getElementById('minPrice').value) : null;
+      currentFilters.maxPrice = document.getElementById('maxPrice').value ? parseInt(document.getElementById('maxPrice').value) : null;
+      renderCollection();
+    }
+
+    function clearFilters(render = true) {
+      currentFilters = { category: [], occasion: [], style: [], gender: [], minPrice: null, maxPrice: null };
+      document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(cb => cb.checked = false);
+      const minEl = document.getElementById('minPrice');
+      const maxEl = document.getElementById('maxPrice');
+      if (minEl) minEl.value = '';
+      if (maxEl) maxEl.value = '';
+      if (render) renderCollection();
+    }
+
+    function applySort() {
+      currentSort = document.getElementById('sortSelect').value;
+      renderCollection();
+    }
+
+    function getFilteredProducts() {
+      const config = COLLECTIONS[currentCollection] || COLLECTIONS['all-jewelry'];
+      let products = PRODUCTS.filter(config.filter);
+
+      // Apply category filter
+      if (currentFilters.category.length > 0) {
+        products = products.filter(p => currentFilters.category.includes(p.category));
+      }
+      // Apply occasion filter
+      if (currentFilters.occasion.length > 0) {
+        products = products.filter(p => p.occasion.some(o => currentFilters.occasion.includes(o)));
+      }
+      // Apply style filter
+      if (currentFilters.style.length > 0) {
+        products = products.filter(p => p.style.some(s => currentFilters.style.includes(s)));
+      }
+      // Apply gender filter
+      if (currentFilters.gender.length > 0) {
+        products = products.filter(p => currentFilters.gender.includes(p.gender));
+      }
+      // Apply price filter
+      if (currentFilters.minPrice !== null) {
+        products = products.filter(p => p.salePrice >= currentFilters.minPrice);
+      }
+      if (currentFilters.maxPrice !== null) {
+        products = products.filter(p => p.salePrice <= currentFilters.maxPrice);
+      }
+
+      // Apply sorting
+      switch (currentSort) {
+        case 'price-low': products.sort((a, b) => a.salePrice - b.salePrice); break;
+        case 'price-high': products.sort((a, b) => b.salePrice - a.salePrice); break;
+        case 'rating': products.sort((a, b) => b.rating - a.rating); break;
+        case 'discount': products.sort((a, b) => b.discount - a.discount); break;
+        case 'newest': products.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0)); break;
+        case 'best-selling': products.sort((a, b) => (b.isBestSeller ? 1 : 0) - (a.isBestSeller ? 1 : 0)); break;
+        default: products.sort((a, b) => (b.isBestSeller ? 1 : 0) - (a.isBestSeller ? 1 : 0)); break;
+      }
+
+      return products;
+    }
+
+    // ============================================================
+    // RENDER COLLECTION
+    // ============================================================
+    function renderCollection() {
+      const products = getFilteredProducts();
+      const container = document.getElementById('collectionProducts');
+      const countEl = document.getElementById('productCount');
+
+      countEl.textContent = `${products.length} product${products.length !== 1 ? 's' : ''}`;
+
+      if (products.length === 0) {
+        container.innerHTML = `<div class="no-results" style="grid-column:1/-1;"><i class="fas fa-search"></i><p>No products found. Try adjusting your filters.</p></div>`;
+        return;
+      }
+
+      container.innerHTML = products.map(p => renderProductCard(p)).join('');
+    }
+
+    // ============================================================
+    // RENDER PRODUCT CARD
+    // ============================================================
+    function renderProductCard(p) {
+      const inWishlist = wishlist.includes(p.id);
+      let badge = '';
+      if (p.isBestSeller) badge = '<span class="product-badge">Best Seller</span>';
+      else if (p.isNew) badge = '<span class="product-badge new">New</span>';
+      else if (p.isSale) badge = '<span class="product-badge sale">Sale</span>';
+
+      return `
+        <div class="product-card">
+          <div class="product-image" onclick="showProduct(${p.id})">
+            ${badge}
+            <img src="${p.image}" alt="${p.name}" loading="lazy">
+            <button class="wishlist-btn ${inWishlist ? 'active' : ''}" onclick="event.stopPropagation(); toggleWishlist(${p.id})">
+              <i class="fas fa-heart"></i>
+            </button>
+            <button class="quick-view-btn" onclick="event.stopPropagation(); openQuickView(${p.id})">Quick View</button>
+          </div>
+          <div class="product-info">
+            <h4 onclick="showProduct(${p.id})">${p.name}</h4>
+            <div class="rating">${getStars(p.rating)} <span>(${p.reviews})</span></div>
+            <div class="product-price">
+              <span class="current">${formatPrice(p.salePrice)}</span>
+              <span class="original">${formatPrice(p.price)}</span>
+              <span class="discount">${p.discount}% OFF</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(${p.id})">Add to Cart</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // ============================================================
+    // PRODUCT DETAIL PAGE
+    // ============================================================
+    function showProduct(id) {
+      const p = PRODUCTS.find(prod => prod.id === id);
+      if (!p) return;
+
+      // Add to recently viewed
+      recentlyViewed = [id, ...recentlyViewed.filter(x => x !== id)].slice(0, 4);
+
+      // Breadcrumbs
+      document.getElementById('productBreadcrumbs').innerHTML = `
+        <a onclick="showPage('home')">Home</a> <span>/</span>
+        <a onclick="showCollection('${slugify(p.category)}')">${p.category}</a> <span>/</span>
+        <span style="color:var(--charcoal);">${p.name}</span>
+      `;
+
+      const detail = document.getElementById('productDetail');
+      detail.innerHTML = `
+        <div>
+          <div class="product-gallery-main">
+            <img src="${p.image}" alt="${p.name}" id="mainImage">
+          </div>
+          <div class="product-gallery-thumbs">
+            <img src="${p.image}" alt="${p.name}" class="active" onclick="document.getElementById('mainImage').src=this.src; document.querySelectorAll('.product-gallery-thumbs img').forEach(i=>i.classList.remove('active')); this.classList.add('active');">
+          </div>
+        </div>
+        <div class="product-detail-info">
+          <h1>${p.name}</h1>
+          <div class="rating">${getStars(p.rating)} <span>(${p.reviews} reviews)</span></div>
+          <div class="product-detail-price">
+            <span class="current">${formatPrice(p.salePrice)}</span>
+            <span class="original">${formatPrice(p.price)}</span>
+            <span class="discount">${p.discount}% OFF</span>
+          </div>
+          <p class="description">${p.description}</p>
+          <div class="product-meta">
+            <div><strong>Category:</strong><span>${p.category}</span></div>
+            <div><strong>Occasion:</strong><span>${p.occasion.join(', ')}</span></div>
+            <div><strong>Style:</strong><span>${p.style.join(', ')}</span></div>
+            <div><strong>Gender:</strong><span>${p.gender}</span></div>
+            <div><strong>Availability:</strong><span>${p.stock > 0 ? 'In Stock' : 'Out of Stock'}</span></div>
+          </div>
+          <div class="quantity-selector">
+            <button onclick="changeQty(-1)">−</button>
+            <span id="productQty">1</span>
+            <button onclick="changeQty(1)">+</button>
+          </div>
+          <div class="product-detail-actions">
+            <button class="btn btn-solid" onclick="addToCart(${p.id})">Add to Cart</button>
+            <button class="btn" onclick="addToCart(${p.id}); openCart();">Buy Now</button>
+            <button class="btn btn-wishlist" onclick="toggleWishlist(${p.id})">
+              <i class="fas fa-heart"></i> Wishlist
+            </button>
+          </div>
+          <div class="product-tabs">
+            <div class="product-tabs-nav">
+              <button class="active" onclick="switchTab(this, 'desc')">Description</button>
+              <button onclick="switchTab(this, 'shipping')">Shipping</button>
+              <button onclick="switchTab(this, 'returns')">Returns</button>
+            </div>
+            <div class="product-tab-content active" id="tab-desc">
+              <p>${p.description}</p>
+              <p style="margin-top:12px;"><strong>Material:</strong> High-quality artificial materials with gold-tone finish.</p>
+              <p><strong>Care Instructions:</strong> Keep away from water, perfume, and harsh chemicals. Store in a dry place.</p>
+            </div>
+            <div class="product-tab-content" id="tab-shipping">
+              <p>Free shipping on orders above Rs. 3,000. Standard delivery within 3-5 working days across Pakistan. Cash on Delivery available.</p>
+            </div>
+            <div class="product-tab-content" id="tab-returns">
+              <p>7-day return policy. Products must be unused and in original packaging. Contact customer care for return requests.</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Related products
+      renderRelated(p);
+
+      showPage('productPage');
+    }
+
+    let productQty = 1;
+    function changeQty(delta) {
+      productQty = Math.max(1, productQty + delta);
+      document.getElementById('productQty').textContent = productQty;
+    }
+
+    function switchTab(btn, tabId) {
+      document.querySelectorAll('.product-tabs-nav button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.product-tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + tabId).classList.add('active');
+    }
+
+    function renderRelated(p) {
+      const related = PRODUCTS.filter(prod =>
+        prod.id !== p.id &&
+        (prod.category === p.category || prod.occasion.some(o => p.occasion.includes(o)))
+      ).slice(0, 4);
+
+      if (related.length === 0) return;
+
+      document.getElementById('relatedProducts').innerHTML = `
+        <div class="section" style="padding-top:0;">
+          <div class="section-title">
+            <h2>Related Products</h2>
+          </div>
+          <div class="product-grid">${related.map(r => renderProductCard(r)).join('')}</div>
+        </div>
+      `;
+    }
+
+    // ============================================================
+    // CART
+    // ============================================================
+    function addToCart(id) {
+      const p = PRODUCTS.find(prod => prod.id === id);
+      if (!p) return;
+      const existing = cart.find(item => item.id === id);
+      if (existing) existing.qty++;
+      else cart.push({ id, qty: 1, product: p });
+      updateCartUI();
+      // Show brief feedback
+      const btn = event?.target;
+      if (btn && btn.classList.contains('add-to-cart-btn')) {
+        const orig = btn.textContent;
+        btn.textContent = 'Added ✓';
+        setTimeout(() => btn.textContent = orig, 1200);
+      }
+    }
+
+    function removeFromCart(id) {
+      cart = cart.filter(item => item.id !== id);
+      updateCartUI();
+    }
+
+    function updateCartQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) removeFromCart(id);
+      else updateCartUI();
+    }
+
+    function updateCartUI() {
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById('cartCount').textContent = count;
+      document.getElementById('cartCount').style.display = count > 0 ? 'flex' : 'none';
+
+      const itemsEl = document.getElementById('cartItems');
+      const footerEl = document.getElementById('cartFooter');
+
+      if (cart.length === 0) {
+        itemsEl.innerHTML = `<div class="cart-empty"><i class="fas fa-shopping-bag"></i><p>Your bag is empty</p></div>`;
+        footerEl.style.display = 'none';
+        return;
+      }
+
+      itemsEl.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.product.image}" alt="${item.product.name}">
+          <div class="cart-item-info">
+            <h4>${item.product.name}</h4>
+            <div class="price">${formatPrice(item.product.salePrice)}</div>
+            <div class="cart-item-qty">
+              <button onclick="updateCartQty(${item.id}, -1)">−</button>
+              <span>${item.qty}</span>
+              <button onclick="updateCartQty(${item.id}, 1)">+</button>
+            </div>
+            <button class="cart-item-remove" onclick="removeFromCart(${item.id})">Remove</button>
+          </div>
+        </div>
+      `).join('');
+
+      const subtotal = cart.reduce((sum, item) => sum + item.product.salePrice * item.qty, 0);
+      const shipping = subtotal >= 3000 ? 0 : 200;
+      document.getElementById('cartSubtotal').textContent = formatPrice(subtotal);
+      document.getElementById('cartShipping').textContent = shipping === 0 ? 'Free' : formatPrice(shipping);
+      document.getElementById('cartTotal').textContent = formatPrice(subtotal + shipping);
+      footerEl.style.display = 'block';
+    }
+
+    function openCart() {
+      document.getElementById('cartDrawer').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCart() {
+      document.getElementById('cartDrawer').classList.remove('open');
+      document.getElementById('cartOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function checkout() {
+      if (cart.length === 0) return;
+      alert('Proceeding to checkout with ' + cart.length + ' item(s). Total: ' + document.getElementById('cartTotal').textContent);
+      // In a real implementation, this would navigate to a checkout page
+    }
+
+    // ============================================================
+    // WISHLIST
+    // ============================================================
+    function toggleWishlist(id) {
+      const idx = wishlist.indexOf(id);
+      if (idx > -1) wishlist.splice(idx, 1);
+      else wishlist.push(id);
+      updateWishlistUI();
+      // Update all wishlist buttons for this product
+      document.querySelectorAll(`.wishlist-btn`).forEach(btn => {
+        if (btn.getAttribute('onclick')?.includes(`toggleWishlist(${id})`)) {
+          btn.classList.toggle('active', wishlist.includes(id));
+        }
+      });
+    }
+
+    function updateWishlistUI() {
+      const count = wishlist.length;
+      const el = document.getElementById('wishlistCount');
+      el.textContent = count;
+      el.style.display = count > 0 ? 'flex' : 'none';
+    }
+
+    function openWishlist() {
+      if (wishlist.length === 0) {
+        alert('Your wishlist is empty. Click the heart icon on any product to add it.');
+        return;
+      }
+      // Show wishlist as a collection
+      showCollection('all-jewelry');
+      // Filter to wishlist items
+      setTimeout(() => {
+        const products = PRODUCTS.filter(p => wishlist.includes(p.id));
+        document.getElementById('collectionTitle').textContent = 'My Wishlist';
+        document.getElementById('collectionSubtitle').textContent = `${products.length} item(s) saved`;
+        document.getElementById('collectionProducts').innerHTML = products.map(p => renderProductCard(p)).join('');
+        document.getElementById('productCount').textContent = `${products.length} product${products.length !== 1 ? 's' : ''}`;
+      }, 50);
+    }
+
+    // ============================================================
+    // QUICK VIEW
+    // ============================================================
+    function openQuickView(id) {
+      const p = PRODUCTS.find(prod => prod.id === id);
+      if (!p) return;
+
+      document.getElementById('quickViewContent').innerHTML = `
+        <div>
+          <img src="${p.image}" alt="${p.name}">
+        </div>
+        <div class="quick-view-info">
+          <h2>${p.name}</h2>
+          <div class="rating">${getStars(p.rating)} <span style="color:#999;">(${p.reviews} reviews)</span></div>
+          <div class="price">
+            ${formatPrice(p.salePrice)}
+            <span class="original">${formatPrice(p.price)}</span>
+          </div>
+          <p>${p.description}</p>
+          <button class="btn btn-solid" style="width:100%;" onclick="addToCart(${p.id}); closeQuickView();">Add to Cart</button>
+          <button class="btn" style="width:100%; margin-top:8px;" onclick="closeQuickView(); showProduct(${p.id});">View Full Details</button>
+        </div>
+      `;
+      document.getElementById('quickViewModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeQuickView(e) {
+      if (e && e.target !== e.currentTarget) return;
+      document.getElementById('quickViewModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // ============================================================
+    // SEARCH
+    // ============================================================
+    function openSearch() {
+      document.getElementById('searchModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => document.getElementById('searchInput').focus(), 100);
+    }
+
+    function closeSearch() {
+      document.getElementById('searchModal').classList.remove('active');
+      document.body.style.overflow = '';
+      document.getElementById('searchInput').value = '';
+      document.getElementById('searchResults').innerHTML = '';
+    }
+
+    function performSearch() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const resultsEl = document.getElementById('searchResults');
+
+      if (query.length < 2) {
+        resultsEl.innerHTML = '';
+        return;
+      }
+
+      const results = PRODUCTS.filter(p =>
+        p.name.toLowerCase().includes(query) ||
+        p.category.toLowerCase().includes(query) ||
+        p.occasion.some(o => o.toLowerCase().includes(query)) ||
+        p.style.some(s => s.toLowerCase().includes(query)) ||
+        p.description.toLowerCase().includes(query)
+      ).slice(0, 8);
+
+      if (results.length === 0) {
+        resultsEl.innerHTML = `<div class="no-results"><i class="fas fa-search"></i><p>No products found for "${query}"</p></div>`;
+        return;
+      }
+
+      resultsEl.innerHTML = results.map(p => `
+        <div class="search-result-item" onclick="closeSearch(); showProduct(${p.id});">
+          <img src="${p.image}" alt="${p.name}">
+          <div class="info">
+            <h4>${p.name}</h4>
+            <div class="price">${formatPrice(p.salePrice)}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ============================================================
+    // HOME PAGE RENDERING
+    // ============================================================
+    function renderHomePage() {
+      // Category grid
+      const categories = [
+        { name: 'Jewelry Sets', icon: 'fa-gem', key: 'jewelry-sets' },
+        { name: 'Necklaces', icon: 'fa-circle', key: 'necklaces' },
+        { name: 'Chokers', icon: 'fa-ring', key: 'chokers' },
+        { name: 'Earrings', icon: 'fa-star', key: 'earrings' },
+        { name: 'Jhumkas', icon: 'fa-star-of-life', key: 'jhumkas' },
+        { name: 'Studs', icon: 'fa-dot-circle', key: 'studs' },
+        { name: 'Hoops', icon: 'fa-circle-notch', key: 'hoops' },
+        { name: 'Rings', icon: 'fa-ring', key: 'rings' },
+        { name: 'Bangles', icon: 'fa-circle', key: 'bangles' },
+        { name: 'Bracelets', icon: 'fa-link', key: 'bracelets' },
+        { name: 'Kada', icon: 'fa-square', key: 'kada' },
+        { name: 'Pendants', icon: 'fa-heart', key: 'pendants' },
+        { name: 'Tikka', icon: 'fa-crown', key: 'tikka' },
+        { name: 'Maang Tikka', icon: 'fa-crown', key: 'maang-tikka' },
+        { name: 'Matha Patti', icon: 'fa-gem', key: 'matha-patti' },
+        { name: 'Nath', icon: 'fa-circle', key: 'nath' },
+      ];
+
+      document.getElementById('homeCategoryGrid').innerHTML = categories.map(c => {
+        const count = PRODUCTS.filter(p => {
+          const config = COLLECTIONS[c.key];
+          return config ? config.filter(p) : false;
+        }).length;
+        return `
+          <div class="category-card" onclick="showCollection('${c.key}')">
+            <i class="fas ${c.icon}"></i>
+            <h4>${c.name}</h4>
+            <span>${count} items</span>
+          </div>
+        `;
+      }).join('');
+
+      // Occasion grid
+      const occasions = [
+        { name: 'Bridal', key: 'bridal', img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80' },
+        { name: 'Baraat', key: 'baraat', img: 'https://images.unsplash.com/photo-1610694955371-d4a3e0c2f6f0?w=600&q=80' },
+        { name: 'Mehndi', key: 'mehndi', img: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80' },
+        { name: 'Walima', key: 'walima', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&q=80' },
+        { name: 'Nikah', key: 'nikah', img: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=600&q=80' },
+        { name: 'Eid', key: 'eid', img: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600&q=80' },
+        { name: 'Party', key: 'party', img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80' },
+        { name: 'Get-Together', key: 'get-together', img: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80' },
+      ];
+
+      document.getElementById('homeOccasionGrid').innerHTML = occasions.map(o => `
+        <div class="occasion-card" onclick="showCollection('${o.key}')">
+          <img src="${o.img}" alt="${o.name} jewelry" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80'">
+          <div class="overlay-text"><h4>${o.name}</h4></div>
+        </div>
+      `).join('');
+
+      // Best sellers
+      const bestSellers = PRODUCTS.filter(p => p.isBestSeller).slice(0, 4);
+      document.getElementById('homeBestSellers').innerHTML = bestSellers.map(p => renderProductCard(p)).join('');
+    }
+
+    // ============================================================
+    // MOBILE DRAWER
+    // ============================================================
+    const hamburger = document.getElementById('hamburger');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const closeDrawerBtn = document.getElementById('closeDrawer');
+    const overlay = document.getElementById('overlay');
+
+    function openMobileDrawer() {
+      mobileDrawer.classList.add('open');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileDrawer() {
+      mobileDrawer.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', openMobileDrawer);
+    closeDrawerBtn.addEventListener('click', closeMobileDrawer);
+    overlay.addEventListener('click', closeMobileDrawer);
+
+    // ============================================================
+    // PRELOADER
+    // ============================================================
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        document.getElementById('preloader').classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 2000);
+    });
+
+    // Prevent body scroll during preloader
+    document.body.style.overflow = 'hidden';
+
+    // ============================================================
+    // INIT
+    // ============================================================
+    renderHomePage();
+    updateCartUI();
+    updateWishlistUI();
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) navbar.style.boxShadow = '0 10px 30px -10px rgba(0,0,0,0.1)';
+      else navbar.style.boxShadow = 'none';
+    });
+  </script>
+
+</body>
+</html>
